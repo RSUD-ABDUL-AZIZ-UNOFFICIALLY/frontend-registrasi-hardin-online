@@ -1,44 +1,107 @@
 'use client'
-import React, { createContext, useContext, useState } from 'react'
-
+import axios from 'axios'
+import moment from 'moment'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation';
 export const DaftarOnlineContext: any | null = createContext(null)
 
 export const DaftarOnlineProvider = ({ children }: { children: any }) => {
+    const base_url = process.env.base_url
     const [nik, setNik] = useState<string | null>()
     const [name, setName] = useState<string | null>()
     const [noRm, setNoRm] = useState<string | null>()
-    const [asuransi, setAsuransi] = useState<string | null>()
-    const [poli, setPoli] = useState<string | null>()
-    const [dokter, setDokter] = useState<string | null>()
+    const [poli, setPoli] = useState<any>()
+    const [asuransi, setAsuransi] = useState<any>()
+    const [dokter, setDokter] = useState<any>()
+    const [dateBooking, setDateBooking] = useState<string>(moment().format('YYYY-MM-DD'))
     const [dataFamily, setDataFamily] = useState<any | null>()
-    const data = [
-        { id: 1, no_rm: '123167', nik: '6172xxxxxxxx12', name: 'Amirull Azmi' },
-        { id: 2, no_rm: '433234', nik: '6172xxxxxxxx23', name: 'Muhammad Irfansyah' },
-        { id: 3, no_rm: '432234', nik: '6172xxxxxxxx78', name: 'Fakhry' },
-        { id: 4, no_rm: '892323', nik: '6172xxxxxxxx90', name: 'Hamida' },
-        { id: 5, no_rm: '782754', nik: '6172xxxxxxxx57', name: 'Devian Balado' },
-        { id: 6, no_rm: '632187', nik: '6172xxxxxxxx34', name: 'Amiruddin Istiqomah' },
-    ]
-    const dataPoli = [
-        { id: 1, name: 'Poli 1' },
-        { id: 2, name: 'Poli 2' },
-        { id: 3, name: 'Poli 3' },
-        { id: 4, name: 'Poli 4' },
-        { id: 5, name: 'Poli 5' },
-        { id: 6, name: 'Poli 6' },
-        { id: 7, name: 'Poli 7' },
+    const [familySelect, setFamilySelect] = useState<any | null>(null)
+    const [dataPoli, setDataPoli] = useState<any | null>(null)
+    const [dataDokter, setDataDokter] = useState<any | null>(null)
+    const [dataAsuransi, setDataAsuransi] = useState<any | null>(null)
+    const getFamily = async () => {
+        const token = sessionStorage.getItem('authToken')
+        if (token) {
+            try {
+                const response: any = await axios.get(`${base_url}/hardin/myfamily`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+                if (response.data.error == false) {
+                    setDataFamily(response.data.data)
 
-    ]
-    const dataDokter = [
-        { id: 1, name: 'Dr Dummy 1' },
-        { id: 2, name: 'Dr Dummy 2' },
-        { id: 3, name: 'Dr Dummy 3' },
-        { id: 4, name: 'Dr Dummy 4' },
-        { id: 5, name: 'Dr Dummy 5' },
-        { id: 6, name: 'Dr Dummy 6' },
-        { id: 7, name: 'Dr Dummy 7' },
+                    response.data.data.map((item: any) => {
+                        if (item.nik == nik) {
+                            setNoRm(item.noRm)
+                            setFamilySelect(item)
+                        }
+                    })
 
-    ]
+                }
+            } catch (error) {
+                const response: any = error
+
+            }
+        }
+    }
+
+    const getPoli = async () => {
+        const token = sessionStorage.getItem('authToken')
+        if (token) {
+            try {
+                const response: any = await axios.get(`${base_url}/hardin/reg/poli`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+                if (response.data.error == false) {
+                    setDataPoli(response.data.data)
+                }
+            } catch (error) {
+                const response: any = error
+
+            }
+        }
+    }
+    const getDokter = async () => {
+        const token = sessionStorage.getItem('authToken')
+        if (token) {
+            try {
+                const response: any = await axios.get(`${base_url}/hardin/reg/jadwal?kd_poli=${poli.kd_poli}&tanggal_periksa=${dateBooking}`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+
+                if (response.data.error == false) {
+                    setDataDokter(response.data.data)
+                }
+            } catch (error) {
+                const response: any = error
+
+            }
+        }
+    }
+    const getAsuransi = async () => {
+        const token = sessionStorage.getItem('authToken')
+        if (token) {
+            try {
+                const response: any = await axios.get(`${base_url}/hardin/reg/asuransi`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+
+                if (response.data.error == false) {
+                    setDataAsuransi(response.data.data)
+                }
+            } catch (error) {
+                const response: any = error
+
+            }
+        }
+    }
 
     const handleNik = (e: string) => {
         setNik(e)
@@ -52,24 +115,34 @@ export const DaftarOnlineProvider = ({ children }: { children: any }) => {
         setNoRm(e)
     }
 
-    const handleAsuransi = (e: string) => {
-        setAsuransi(e)
-    }
-
     const handlePoli = (e: string) => {
         setPoli(e)
         setDokter(null)
+        setAsuransi(null)
     }
 
     const handleDokter = (e: string) => {
         setDokter(e)
     }
 
+    const handleDateBooking = (e: string) => {
+        setDateBooking(e)
+        setDokter(null)
+    }
+
+    useEffect(() => {
+        getFamily()
+        getDokter()
+        getAsuransi()
+        console.log(dokter);
+        
+    }, [poli, dateBooking, nik, dokter])
+
     return (
         <DaftarOnlineContext.Provider
             value={{
-                nik, name, noRm, asuransi, poli, dokter, data, dataPoli, dataDokter, dataFamily, setDataFamily,
-                handleNik, handleName, handleNoRm, handleAsuransi, handlePoli, handleDokter
+                nik, name, noRm, poli, dokter, dataPoli, dataDokter, dataFamily, setDataFamily, dateBooking, setDateBooking, dataAsuransi, asuransi, setAsuransi,
+                handleNik, handleName, handleNoRm, handlePoli, handleDokter, familySelect, setFamilySelect, getPoli, getDokter, handleDateBooking, getFamily, getAsuransi,
             }}>
             {children}
         </DaftarOnlineContext.Provider>

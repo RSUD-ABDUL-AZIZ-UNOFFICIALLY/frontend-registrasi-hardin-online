@@ -1,46 +1,25 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Section from './Section'
 import SectionNone from './SectionNone'
 import axios from 'axios'
+import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
 
 const Body = () => {
-    const [family, setFamily] = useState<boolean>(false)
-    const base_url = process.env.base_url
-    const getAnggotaKeluarga = async () => {
-        const token = sessionStorage.getItem(`authToken`)
-        try {
-            const response: any = await axios.get(`${base_url}/hardin/myfamily`, {
-                headers: {
-                    'Authorization': 'Bearer ' + token
-                }
-            });
-            if (response.data.error == false) {
-                setFamily(true)
-            } else {
-                setFamily(false)
-            }
-        } catch (error) {
-            const response: any = error
-            if (response && response.response.data.error == true) {
-                setFamily(false)
-            }
-        }
-    }
+    const daftarOnline: any = useContext(DaftarOnlineContext)
 
     useEffect(() => {
-        getAnggotaKeluarga()
+        daftarOnline.getFamily()
     }, [])
     return (
         <React.Fragment>
-            {family == true ?
+            {daftarOnline.dataFamily ?
                 <>
                     <Section />
                 </>
                 :
                 <>
                     <SectionNone />
-                    <button onClick={() => setFamily(true)} className="btn-secondary capitalize">Jika Ada Data Keluarga</button>
                 </>
             }
         </React.Fragment>

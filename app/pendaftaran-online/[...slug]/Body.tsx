@@ -13,7 +13,7 @@ const Body = ({ slug }: { slug: string }) => {
     return (
         <DaftarOnlineProvider>
             <React.Fragment>
-                <button onClick={() => handleNavigation('/dashboard')} className="btn-warning">Kembali</button>
+                {/* <button onClick={() => handleNavigation('/dashboard')} className="btn-warning">Kembali</button> */}
                 <Section slug={slug} />
             </React.Fragment>
         </DaftarOnlineProvider>

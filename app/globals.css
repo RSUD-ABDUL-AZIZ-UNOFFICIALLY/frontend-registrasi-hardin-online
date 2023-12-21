@@ -14,7 +14,7 @@
   --color-secondary: #ee314c;
   --color-secondary-hover: #de344e;
   --color-success: #31ee76;
-  --color-success-hover: #de344e;
+  --color-success-hover: #2fda6e;
   --color-info: #60C8D9;
   --color-info-hover: #5fc1d1;
   --color-ghost: #F2F2F2;
@@ -22,6 +22,10 @@
   --color-black: #130101;
   --color-warning: #f4d031;
   --color-warning-hover: #e4c331;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
@@ -82,15 +86,6 @@ body {
   background-color: rgb(255, 255, 255);
   border-radius: 14px;
   overflow: hidden;
-}
-
-.modal {
-  min-height: 100vh;
-  min-width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 
 .main-section {
@@ -249,8 +244,15 @@ button.btn-warning {
 button.btn-warning:hover {
   background-color: var(--color-warning-hover);
 }
+button.btn-success {
+  background-color: var(--color-success);
+  color: var(--color-black);
+}
+button.btn-success:hover {
+  background-color: var(--color-success-hover);
+}
 button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 @keyframes nolsatu {
   from {
@@ -283,18 +285,62 @@ button:active {
 }
 
 .animasi-topToBottom {
-  animation: toptoBottom 1s;
+  animation: toptoBottom 0.5s forwards;
+  transition: ease-in-out;
 }
 @keyframes toptoBottom {
   0% {
-    transform: translateY(-20%);
-    transition: ease-in-out;
+    transform: translateY(0%);
     opacity: 0;
+    display: none;
+  }
+  100% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+}
+
+.animasi-hilang {
+  animation: hilang 0.5s forwards;
+  transition: ease-in-out;
+}
+@keyframes hilang {
+  100% {
+    transform: translateY(0%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.animasi-muncul-on {
+  animation: munculOn 0.5s forwards;
+  transition: ease-in-out;
+}
+@keyframes munculOn {
+  0% {
+    transform: translateY(-3%);
+    opacity: 0;
+    display: none;
   }
   100% {
     transform: translateY(0%);
-    transition: ease-in-out;
     opacity: 1;
+  }
+}
+
+.animasi-muncul-off {
+  animation: munculOff 0.5s forwards;
+  transition: ease-in-out;
+}
+@keyframes munculOff {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 0;
+    display: none;
   }
 }
 
