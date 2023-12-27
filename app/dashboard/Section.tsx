@@ -42,11 +42,11 @@ const Section = () => {
                             {auth && auth.dataProfile && auth.dataProfile.fullname}
                         </div>
                     </div>
-                    <button onClick={() => auth.setAlertWelcome(false)} className="btn w-fit btn-transparant shadow-md flex items-center">
+                    {/* <button onClick={() => auth.setAlertWelcome(false)} className="btn w-fit btn-transparant shadow-md flex items-center">
                         <span className="material-symbols-outlined">
                             close
                         </span>
-                    </button>
+                    </button> */}
                 </div>
                 <div className="pl-2 pr-4">
                     <img src="/welcome.png" alt="" />
@@ -54,8 +54,11 @@ const Section = () => {
             </div>
             <div className="dropdown">
                 <button className="btn-white shadow-lg" onClick={hanldleDropdown}>
-                    <div className="flex justify-between">
-                        <div className="">{daftarOnline.familySelect ? daftarOnline.familySelect.nama : 'Daftar Keluarga'}</div>
+                    <div className="flex justify-between items-center">
+                        <div className="text-left">
+                            <label className='text-sm font-normal' htmlFor=""><small>Nama Pendaftar</small></label>
+                            <div className="">{daftarOnline.familySelect ? daftarOnline.familySelect.nama : 'Pilih Dari Daftar Keluarga'}</div>
+                        </div>
                         <div className={`${dropdown == true && `rotate-90`} duration-300`}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

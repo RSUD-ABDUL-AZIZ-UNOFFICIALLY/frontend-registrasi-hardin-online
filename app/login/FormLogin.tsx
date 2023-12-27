@@ -3,13 +3,15 @@ import axios from 'axios'
 import moment from 'moment'
 // import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AlertDanger from '../Component/Assets/AlertDanger'
 import AlertSuccess from '../Component/Assets/AlertSuccess'
 import ModalSuccess from '../Component/Login/ModalSuccess'
+import { AuthContext } from '../context/AuthContext'
 
 const FormLogin = () => {
     const router = useRouter()
+    const auth: any = useContext(AuthContext)
     const base_url = process.env.base_url
     const [loading, setLoading] = useState<boolean>(false)
     const waktu_loading_otp: any = 120
@@ -90,6 +92,7 @@ const FormLogin = () => {
                     setErrorOtp(false)
                     setDescErrorOtp('')
                     setDescSuccess('Login Berhasil')
+                    auth.setAlertWelcome(true)
                     sessionStorage.setItem('authToken', response.data.data.token)
                     sessionStorage.removeItem('loadingOtp')
                     sessionStorage.removeItem('loadingOtpRegis')
