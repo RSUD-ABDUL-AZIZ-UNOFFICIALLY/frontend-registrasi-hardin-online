@@ -34,7 +34,7 @@ const Section = () => {
     }, [auth])
     return (
         <React.Fragment>
-            <div className={`rounded-lg shadow-lg   ease-in-out duration-300 overflow-hidden ${auth && auth.alertWelcome == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
+            <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${auth && auth.alertWelcome == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
                 <div className="flex items-center justify-between gap-1 p-3">
                     <div className="flex items-center gap-1">
                         Hi

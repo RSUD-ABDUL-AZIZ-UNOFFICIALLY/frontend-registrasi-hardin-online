@@ -15,11 +15,11 @@ const Body = () => {
         <React.Fragment>
             {daftarOnline.dataFamily ?
                 <>
-                    <Section />
+                    <SectionNone />
                 </>
                 :
                 <>
-                    <SectionNone />
+                    <Section />
                 </>
             }
         </React.Fragment>

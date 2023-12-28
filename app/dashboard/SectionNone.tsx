@@ -13,7 +13,7 @@ const SectionNone = () => {
     return (
         <React.Fragment>
             <div className="grid lg:md:grid-cols-2 gap-3 animasi-popup">
-                <div className={`rounded-lg shadow-lg   ease-in-out duration-300 overflow-hidden ${alert == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
+                <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${alert == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
                     <div className="flex items-center justify-between gap-1 p-3">
                         <div className="flex items-center gap-1">
                             Hi
@@ -21,11 +21,6 @@ const SectionNone = () => {
                                 {auth && auth.dataProfile && auth.dataProfile.fullname}
                             </div>
                         </div>
-                        <button onClick={() => auth.setAlertWelcome(false)} className="btn w-fit btn-transparant shadow-md flex items-center">
-                            <span className="material-symbols-outlined">
-                                close
-                            </span>
-                        </button>
                     </div>
                     <div className="pl-2 pr-4">
                         <img src="/welcome.png" alt="" />
