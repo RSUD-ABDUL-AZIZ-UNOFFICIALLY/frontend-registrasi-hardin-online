@@ -22,8 +22,6 @@ const Section = ({ slug }: { slug: string }) => {
                     }
                 });
 
-                console.log(response.data);
-
                 if (response.data.error == false) {
                     setData(response.data.data.slice().sort((a: number, b: number) => b - a))
 
@@ -86,15 +84,15 @@ const Section = ({ slug }: { slug: string }) => {
 
     return (
         <React.Fragment>
-            <div className="flex text-center justify-center">
-                <div className="p-2">List Registrasi Online</div>
+            <div className="section flex text-center justify-center">
+                <div className="p-2 font-semibold">Daftar Registrasi</div>
             </div>
             <div className={`section shadow-lg`}>
                 {data ? data.map((item: any, index: number) => {
                     return (
                         <React.Fragment key={index}>
                             <div className="rounded-lg shadow-xl  p-0 flex overflow-hidden mb-3">
-                                <div className={`w-[30%] p-2  ${item.status == 'Terdaftar' && `bg-success`} ${item.status == 'Batal' && `bg-warning`} ${item.status == 'Belum' && `bg-info`} text-center text-white grid items-center`}>
+                                <div className={`w-[30%] p-2  ${item.status == 'Terdaftar' && `bg-success`} ${item.status == 'Batal' && `bg-red-500`} ${item.status == 'Belum' && `bg-info`} text-center text-white grid items-center`}>
                                     <div className="">
                                         <p className='uppercase text-sm'>Antrian</p>
                                         <p className='text-5xl font-bold'>{item.no_reg}</p>
@@ -103,7 +101,7 @@ const Section = ({ slug }: { slug: string }) => {
                                 <div className="w-[70%] p-2 grid gap-1">
                                     <div className="flex item-center gap-2">
                                         <div className="w-[30%] text-xs">No RM</div>
-                                        <div className="w-[70%] text-xs">{item.no_rkm_medis}</div>
+                                        <div className="w-[70%] text-xs font-bold">{item.no_rkm_medis}</div>
                                     </div>
                                     <div className="flex item-center gap-2">
                                         <div className="w-[30%] text-xs">Nama</div>
@@ -127,14 +125,38 @@ const Section = ({ slug }: { slug: string }) => {
                                     </div>
                                     <div className="flex justify-end gap-1 mt-3">
                                         {today == item.tanggal_periksa ?
-                                            <React.Fragment>
-                                                <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="btn-success text-[10px] w-fit">
-                                                    Check In
-                                                </button>
-                                                <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="btn-secondary text-[10px] w-fit">
-                                                    Batal
-                                                </button>
-                                            </React.Fragment>
+                                            item.status == 'Terdaftar' ?
+                                                <React.Fragment>
+                                                    <div className="section shadow-lg text-xs text-center flex items-center justify-between">
+                                                        Anda Sudah Check In
+                                                        <div className="text-green-500">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </React.Fragment>
+                                                : item.status == 'Batal' ?
+                                                    <React.Fragment>
+                                                        <div className="section shadow-lg text-xs text-center flex items-center justify-between">
+                                                            Dibatalkan
+                                                            <div className="text-red-500">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                                </svg>
+
+                                                            </div>
+                                                        </div>
+                                                    </React.Fragment>
+                                                    :
+                                                    < React.Fragment >
+                                                        <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="button-success text-[10px] w-fit">
+                                                            Check In
+                                                        </button>
+                                                        <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="button-secondary text-[10px] w-fit">
+                                                            Batal
+                                                        </button>
+                                                    </React.Fragment>
                                             :
                                             <React.Fragment>
                                                 <div className="section shadow-lg text-xs text-center">
@@ -153,9 +175,9 @@ const Section = ({ slug }: { slug: string }) => {
                         <div className="section text-center">Tidak Ada Pendaftaran</div>
                     </React.Fragment>
                 }
-            </div>
+            </div >
 
-        </React.Fragment>
+        </React.Fragment >
 
     )
 }

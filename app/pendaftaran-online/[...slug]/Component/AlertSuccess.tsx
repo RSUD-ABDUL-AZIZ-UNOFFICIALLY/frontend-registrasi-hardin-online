@@ -80,12 +80,12 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                     </div>
                                 </div>
                                 <div className="flex gap-3">
-                                    <button onClick={() => handleNavigation('/dashboard')} className="btn-warning mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation('/dashboard')} className="button-warning mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Kembali Ke Dashboard
                                         </div>
                                     </button>
-                                    <button onClick={() => handleNavigation(`/check-in/${context.familySelect.nik}`)} className="btn-secondary mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation(`/check-in/${context.familySelect.nik}`)} className="button-secondary mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Check In
                                         </div>

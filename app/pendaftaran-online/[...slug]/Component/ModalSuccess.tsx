@@ -57,8 +57,8 @@ const ModalSuccess = () => {
 
     return (
         <React.Fragment>
-            <button onClick={() => handleDaftarOnline()} className="btn-secondary">Daftar</button>
-            <div className="modal">
+            <button onClick={() => handleDaftarOnline()} className="button-secondary">Daftar</button>
+            <div className="">
                 {success == true && <AlertSuccess data={dataSuccess} />}
                 {error == true && <AlertError />}
             </div>

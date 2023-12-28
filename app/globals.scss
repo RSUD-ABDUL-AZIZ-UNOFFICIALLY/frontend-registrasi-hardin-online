@@ -232,7 +232,7 @@ button {
     padding: 10px;
     width: 100%;
 
-    &.btn {
+    &.button {
         background-color: var(--color-white);
 
         &:hover {
@@ -241,7 +241,7 @@ button {
     }
 
 
-    &.btn-primary {
+    &.button-primary {
         background-color: var(--color-primary-second);
         color: var(--color-white);
 
@@ -250,7 +250,7 @@ button {
         }
     }
 
-    &.btn-transparant {
+    &.button-transparant {
         background-color: #ffffff00;
         color: var(--color-black);
 
@@ -259,7 +259,7 @@ button {
         }
     }
 
-    &.btn-white {
+    &.button-white {
         background-color: var(--color-white);
         color: var(--color-black);
 
@@ -268,7 +268,7 @@ button {
         }
     }
 
-    &.btn-secondary {
+    &.button-secondary {
         background-color: var(--color-secondary);
         color: var(--color-white);
 
@@ -277,7 +277,7 @@ button {
         }
     }
 
-    &.btn-info {
+    &.button-info {
         background-color: var(--color-info);
         color: var(--color-white);
 
@@ -286,7 +286,7 @@ button {
         }
     }
 
-    &.btn-warning {
+    &.button-warning {
         background-color: var(--color-warning);
         color: var(--color-black);
 
@@ -297,7 +297,7 @@ button {
         // color: var(--color-white);
     }
 
-    &.btn-success {
+    &.button-success {
         background-color: var(--color-success);
         color: var(--color-black);
 

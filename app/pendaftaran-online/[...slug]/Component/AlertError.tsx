@@ -35,14 +35,14 @@ const AlertError = () => {
                                 <div className="text-center uppercase font-bold mt-2">Gagal !</div>
                                 <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Anda Sudah Pernah Melakukan Pendaftaran Pada Hari Ini,  Cek History</div>
                                 <div className="flex gap-2">
-                                    <button onClick={() => handleNavigation('/dashboard')} className="btn-warning mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation('/dashboard')} className="button-warning mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Kembali Ke Dashboard
                                         </div>
                                     </button>
-                                    <button onClick={() => handleNavigation(`/history/${context.nik}`)} className="btn-info mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation(`/check-in/${context.nik}`)} className="button-info mt-3 shadow-xl">
                                         <div className="text-sm">
-                                            Lihat Histori
+                                            Lihat Check In
                                         </div>
                                     </button>
                                 </div>

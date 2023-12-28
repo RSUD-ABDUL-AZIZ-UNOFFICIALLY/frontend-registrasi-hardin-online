@@ -156,7 +156,7 @@ const FormRegister = () => {
                         </div>
                     </div>
                     <div className="w-[50%]">
-                        <button onClick={getOtp} className="shadow-lg btn-primary w-full flex justify-between items-center">
+                        <button onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between items-center">
                             Minta OTP
                             {timeFormat > 0 ?
                                 <React.Fragment>
@@ -196,7 +196,7 @@ const FormRegister = () => {
                     </div>
                 }
                 {error && <AlertDanger desc={descError} />}
-                <button onClick={handleRegister} className="shadow-lg btn-secondary w-full mt-4">
+                <button onClick={handleRegister} className="shadow-lg button-secondary w-full mt-4">
                     Daftar
                 </button>
 
@@ -205,7 +205,7 @@ const FormRegister = () => {
                         Sudah Punya Akun ?
                     </div>
                     <div className="w-[40%]">
-                        <button onClick={() => handleNavigation('/login')} className="shadow-lg btn-info">
+                        <button onClick={() => handleNavigation('/login')} className="shadow-lg button-info">
                             Masuk
                         </button>
                     </div>

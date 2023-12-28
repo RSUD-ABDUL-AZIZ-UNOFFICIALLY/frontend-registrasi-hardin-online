@@ -12,27 +12,27 @@ const CardMenu = () => {
     }
     return (
         <React.Fragment>
-            <div className='section-transparant shadow-lg'>
+            <div className='section shadow-lg'>
                 <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 gap-2 justify-center items-center">
-                    <button onClick={() => handleNavigasi(`/pendaftaran-online/${daftarOnline.familySelect.nik}`)} className="btn-white shadow-lg aspect-square">
+                    <button onClick={() => handleNavigasi(`/pendaftaran-online/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/calendar2.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Registrasi Online</div>
                     </button>
-                    <button onClick={() => handleNavigasi(`/check-in/${daftarOnline.familySelect.nik}`)} className="btn-white shadow-lg aspect-square">
+                    <button onClick={() => handleNavigasi(`/check-in/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/checkin.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Check In</div>
                     </button>
-                    {/* <button onClick={() => handleNavigasi(`#`)} className="btn-white shadow-lg aspect-square">
+                    {/* <button onClick={() => handleNavigasi(`#`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/doc2.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Rekam Medis</div>
                     </button> */}
-                    <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="btn-white shadow-lg aspect-square">
+                    <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/search.png'} alt="" />
                         </div>

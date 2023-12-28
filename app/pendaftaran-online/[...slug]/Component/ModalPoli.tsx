@@ -16,11 +16,13 @@ const ModalPoli = () => {
         context.handlePoli(e)
     }
     return (
-        <div className="modal mb-3">
+        <div className=" mb-3">
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
             <div className="flex items-center gap-2">
                 <div className="w-[30%] p-2">Poli</div>
                 <div className="w-[70%]">
-                    <button onClick={() => handleOpenModal()} className="btn-white shadow-md">
+
+                    <button onClick={() => handleOpenModal()} className="button-white shadow-md">
                         <div className="text-black text-xs">{context.poli ? context.poli.nm_poli : `Pilih Poli `}</div>
                     </button>
                 </div>
@@ -29,7 +31,7 @@ const ModalPoli = () => {
                 <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] items-center ">
                     <div className={`section shadow-lg  ${modal == true ? 'scale-100' : `scale-0 `} `}>
                         <div className="flex items-center gap-3">
-                            <button onClick={() => setModal(false)} className="btn-white max-w-fit shadow-md">
+                            <button onClick={() => setModal(false)} className="button-white max-w-fit shadow-md">
                                 <div className="text-yellow-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -41,11 +43,11 @@ const ModalPoli = () => {
                             </div>
                         </div>
                         <div className="p-2 text-center uppercase">{ }</div>
-                        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2 max-h-[80vh] overflow-y-scroll pb-4">
+                        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2 max-h-[60vh] overflow-y-scroll pb-4 p-2">
                             {context.dataPoli && context.dataPoli.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `btn-primary` : `btn-white`} shadow-md border`}>
+                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `button-primary` : `button-white`} shadow-lg`}>
                                             {item.nm_poli}
                                         </button>
                                     </React.Fragment>

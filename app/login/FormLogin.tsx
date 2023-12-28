@@ -156,7 +156,7 @@ const FormLogin = () => {
                         </div>
                     </div>
                     <div className="w-[50%]">
-                        <button onClick={getOtp} className="shadow-lg btn-primary w-full flex justify-between">
+                        <button onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between">
                             Minta OTP
                             {timeFormat > 0 ?
                                 <React.Fragment>
@@ -197,7 +197,7 @@ const FormLogin = () => {
                         </div>
                     </React.Fragment>
                 }
-                <button onClick={handleLogin} className="btn-info w-full mt-4">
+                <button onClick={handleLogin} className="button-info w-full mt-4">
                     Login
                 </button>
 
@@ -206,7 +206,7 @@ const FormLogin = () => {
                         Belum Punya Akun ?
                     </div>
                     <div className="w-[40%]">
-                        <button onClick={() => handleNavigation('/register')} className="btn-secondary shadow-lg">
+                        <button onClick={() => handleNavigation('/register')} className="button-secondary shadow-lg">
                             Buat Akun
                         </button>
                     </div>

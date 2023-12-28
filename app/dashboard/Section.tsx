@@ -36,24 +36,24 @@ const Section = () => {
         <React.Fragment>
             <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${auth && auth.alertWelcome == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
                 <div className="flex items-center justify-between gap-1 p-3">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 p-2 rounded-md">
                         Hi
                         <div className="font-bold">
                             {auth && auth.dataProfile && auth.dataProfile.fullname}
                         </div>
                     </div>
-                    {/* <button onClick={() => auth.setAlertWelcome(false)} className="btn w-fit btn-transparant shadow-md flex items-center">
+                    <button onClick={() => auth.setAlertWelcome(false)} className="button w-fit button-transparant rounded-full flex items-center">
                         <span className="material-symbols-outlined">
                             close
                         </span>
-                    </button> */}
+                    </button>
                 </div>
                 <div className="pl-2 pr-4">
                     <img src="/welcome.png" alt="" />
                 </div>
             </div>
             <div className="dropdown">
-                <button className="btn-white shadow-lg" onClick={hanldleDropdown}>
+                <button className="button-white shadow-lg" onClick={hanldleDropdown}>
                     <div className="flex justify-between items-center">
                         <div className="text-left">
                             <label className='text-sm font-normal' htmlFor=""><small>Nama Pendaftar</small></label>
@@ -70,7 +70,7 @@ const Section = () => {
                     <div className="grid gap-2 shadow-md p-4 mt-3 section">
                         {daftarOnline && daftarOnline.dataFamily.map((item: any, index: number) => {
                             return (
-                                <button key={index} onClick={() => handleSelectDropDown(item)} className={`${daftarOnline.familySelect && daftarOnline.familySelect.nik === item.nik ? `btn-secondary` : `btn-white`} shadow-md text-xs`}>
+                                <button key={index} onClick={() => handleSelectDropDown(item)} className={`${daftarOnline.familySelect && daftarOnline.familySelect.nik === item.nik ? `button-secondary` : `button-white`} shadow-md text-xs`}>
                                     <div className="">
                                         <p>{`${item.nama} - (${item.noRm})`}</p>
                                         <small className='font-xs'>{`${item.nik}`}</small>

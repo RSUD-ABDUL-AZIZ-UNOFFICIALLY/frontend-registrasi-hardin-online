@@ -57,8 +57,8 @@ const Section = ({ slug }: { slug: string }) => {
                 {/* <div className="lg:md:w-[40%] section shadow-lg">
                     <div className="p-2">Asuransi :</div>
                     <div className="flex gap-3 text-sm">
-                        <button onClick={() => handleAsuransi('bpjs')} className={`${asuransi == 'bpjs' ? `btn-info` : `btn-white`} shadow-md text-black`}>BPJS</button>
-                        <button onClick={() => handleAsuransi('umum/lainnya')} className={`${asuransi != 'bpjs' ? `btn-info` : `btn-white`} shadow-md text-black`}>Umum / Asuransi Lain</button>
+                        <button onClick={() => handleAsuransi('bpjs')} className={`${asuransi == 'bpjs' ? `button-info` : `button-white`} shadow-md text-black`}>BPJS</button>
+                        <button onClick={() => handleAsuransi('umum/lainnya')} className={`${asuransi != 'bpjs' ? `button-info` : `button-white`} shadow-md text-black`}>Umum / Asuransi Lain</button>
                     </div>
                 </div> */}
             </div>
