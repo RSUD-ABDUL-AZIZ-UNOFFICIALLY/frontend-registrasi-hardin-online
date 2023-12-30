@@ -123,7 +123,7 @@ const FormRegister = () => {
             setTimeFormat(moment.duration(loadingTime, 'second'))
             const countdown = setInterval(() => {
                 if (seconds > 0) {
-                    sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
+                    sessionStorage.setItem('loadingOtpRegis', `${seconds - 1}`)
                     setSeconds(seconds - 1)
                     setTimeFormat(moment.duration(seconds - 1, 'seconds'))
                 } else {
@@ -146,17 +146,17 @@ const FormRegister = () => {
                 </div>
                 <div className="form-input">
                     <label htmlFor="">Nomor Whatapps</label>
-                    <input value={phone} onChange={(e) => setPhone(e.target.value)} className='shadow-lg input' type="text" placeholder='Masukan nomor whatapps' />
+                    <input value={phone} onChange={(e) => setPhone(e.target.value)} className='shadow-lg input' type="number" placeholder='Masukan nomor whatapps' />
                 </div>
                 <div className="flex items-end gap-2">
                     <div className="w-[50%]">
                         <div className="form-input">
                             <label htmlFor="">Kode OTP</label>
-                            <input type='any' value={otp} onChange={(e) => setOtp(e.target.value)} maxLength={6} className='shadow-lg input' placeholder='Masukan kode OTP' />
+                            <input type='number' value={otp} onChange={(e) => setOtp(e.target.value)} maxLength={6} className='shadow-lg input' placeholder='Masukan kode OTP' />
                         </div>
                     </div>
                     <div className="w-[50%]">
-                        <button onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between items-center">
+                        <button disabled={timeFormat > 0 ? true : false} onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between items-center">
                             Minta OTP
                             {timeFormat > 0 ?
                                 <React.Fragment>

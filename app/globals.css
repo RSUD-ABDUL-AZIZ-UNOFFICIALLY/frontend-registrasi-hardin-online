@@ -263,6 +263,15 @@ button:active {
   }
 }
 
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  z-index: 1;
+}
+button[disabled]:active {
+  transform: scale(1);
+}
+
 .animasi-popup {
   animation: scaleUp 1s;
 }

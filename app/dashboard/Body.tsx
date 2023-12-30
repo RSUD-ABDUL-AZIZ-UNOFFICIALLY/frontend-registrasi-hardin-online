@@ -4,9 +4,11 @@ import Section from './Section'
 import SectionNone from './SectionNone'
 import axios from 'axios'
 import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
+import { AuthContext } from '../context/AuthContext'
 
 const Body = () => {
     const daftarOnline: any = useContext(DaftarOnlineContext)
+    const auth: any = useContext(AuthContext)
 
     useEffect(() => {
         daftarOnline.getFamily()

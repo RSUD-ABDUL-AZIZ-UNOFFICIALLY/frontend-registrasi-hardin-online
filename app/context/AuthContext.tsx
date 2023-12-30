@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
     const [dataSelect, setDataSelect] = useState<string | null>(null)
     const [token, setToken] = useState<string | null>()
     const [alertWelcome, setAlertWelcome] = useState<boolean>(true)
-    const [login, setLogin] = useState<boolean>()
+    const [login, setLogin] = useState<boolean>(false)
     const router = useRouter()
     const [dataProfile, setDataProfile] = useState<any>()
 
@@ -40,6 +40,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
         } else {
             setLogin(false)
             setToken(null)
+            router.push('/login')
         }
     }
 
@@ -54,7 +55,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
     useEffect(() => {
         checkAuth()
 
-    }, [])
+    })
     return (
         <AuthContext.Provider value={{ dataSelect, setDataSelect, token, login, logout, dataProfile, alertWelcome, setAlertWelcome, checkAuth }}>
             {children}

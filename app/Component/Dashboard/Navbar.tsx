@@ -16,6 +16,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
+        auth.checkAuth()
         function handleClickOutside(event: MouseEvent) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node | null)) {
                 setDropdown(false)
@@ -27,6 +28,7 @@ const Navbar = () => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
+
     }, [])
     return (
         <div className='navbar shadow-md'>

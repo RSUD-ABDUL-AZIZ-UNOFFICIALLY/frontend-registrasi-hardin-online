@@ -145,18 +145,18 @@ const FormLogin = () => {
             <div className="grid gap-1 w-full text-sm">
                 <div className="form-input">
                     <label htmlFor="">Nomor Whatapps</label>
-                    <input onChange={(e) => setPhone(e.target.value)} value={phone} className='shadow-lg input' type="text" placeholder='Masukan nomor whatapps' />
+                    <input onChange={(e) => setPhone(e.target.value)} value={phone} className='shadow-lg input' type="number" placeholder='Masukan nomor whatapps' />
                 </div>
 
                 <div className="flex items-end gap-2">
                     <div className="w-[50%]">
                         <div className="form-input">
                             <label htmlFor="">Kode OTP</label>
-                            <input onChange={(e) => setOtp(e.target.value)} className='shadow-lg input' type="text" placeholder='Masukan Kode OTP' />
+                            <input onChange={(e) => setOtp(e.target.value)} className='shadow-lg input' type="number" placeholder='Masukan Kode OTP' />
                         </div>
                     </div>
                     <div className="w-[50%]">
-                        <button onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between">
+                        <button disabled={timeFormat > 0 ? true : false} onClick={getOtp} className="shadow-lg button-primary w-full flex justify-between">
                             Minta OTP
                             {timeFormat > 0 ?
                                 <React.Fragment>
