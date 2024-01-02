@@ -16,7 +16,7 @@ const ModalSuccess = () => {
                 <div className="text-xl font-semibold uppercase text-center p-4">
                     Akun Anda Sudah Terdaftar
                 </div>
-                <button onClick={() => handleNavigation(`/login`)} className="btn-warning">
+                <button onClick={() => handleNavigation(`/login`)} className="button-warning">
                     Masuk
                 </button>
             </div>

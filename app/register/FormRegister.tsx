@@ -45,7 +45,6 @@ const FormRegister = () => {
                         phone: phone
                     }
                 })
-                console.log('response otp regis', response.data);
 
                 if (response.data.error == false) {
                     setSuccessOtp(true)
@@ -58,7 +57,6 @@ const FormRegister = () => {
 
             } catch (error) {
                 const response: any = error
-                console.log('error otp regis', response.response);
                 if (response && response.response && response.response.data) {
                     setErrorOtp(true)
                     setDescErrorOtp(response.response.data.message)
@@ -138,7 +136,7 @@ const FormRegister = () => {
     return (
         <React.Fragment>
             <div className="grid gap-3 w-full text-sm">
-                {success && <ModalSuccess />}
+                {success == true && <ModalSuccess />}
 
                 <div className="form-input">
                     <label htmlFor="">Nama Lengkap</label>

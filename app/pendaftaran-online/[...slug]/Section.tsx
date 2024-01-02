@@ -34,7 +34,7 @@ const Section = ({ slug }: { slug: string }) => {
     return (
 
         <React.Fragment>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 animasi-popup">
                 {context
                     &&
                     (
@@ -68,7 +68,7 @@ const Section = ({ slug }: { slug: string }) => {
                     <SectionBPJS />
                 </div>
                 : */}
-            <div className="section shadow-lg p-3">
+            <div className="section shadow-lg p-3 animasi-popup">
                 <SectionUmum />
             </div>
             {/* } */}

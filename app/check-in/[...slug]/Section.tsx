@@ -84,16 +84,16 @@ const Section = ({ slug }: { slug: string }) => {
 
     return (
         <React.Fragment>
-            <div className="section flex text-center justify-center">
+            <div className="animasi-popup section flex text-center justify-center">
                 <div className="p-2 font-semibold">Daftar Registrasi</div>
             </div>
-            <div className={`section shadow-lg`}>
+            <div className={`section shadow-lg animasi-popup`}>
                 {data ? data.map((item: any, index: number) => {
                     console.log('item', item.penjab.png_jawab);
 
                     return (
                         <React.Fragment key={index}>
-                            <div className="rounded-lg shadow-xl  p-0 flex overflow-hidden mb-3">
+                            <div className="rounded-lg shadow-xl animasi-popup p-0 flex overflow-hidden mb-3">
                                 <div className={`w-[30%] p-2  ${item.status == 'Terdaftar' && `bg-success`} ${item.status == 'Batal' && `bg-red-500`} ${item.status == 'Belum' && `bg-info`} text-center text-white grid items-center`}>
                                     <div className="">
                                         <p className='uppercase text-sm'>Antrian</p>
@@ -178,7 +178,7 @@ const Section = ({ slug }: { slug: string }) => {
                 })
                     :
                     <React.Fragment>
-                        <div className="section text-center">Tidak Ada Pendaftaran</div>
+                        <div className="section text-center animasi-popup">Tidak Ada Pendaftaran</div>
                     </React.Fragment>
                 }
             </div >
