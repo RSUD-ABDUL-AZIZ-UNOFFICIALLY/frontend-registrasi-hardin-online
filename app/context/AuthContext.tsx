@@ -29,9 +29,11 @@ export const AuthProvider = ({ children }: { children: any }) => {
                     setDataProfile(response.data.data)
                 }
 
+
+
             } catch (error) {
                 const response: any = error
-                if (response && response.response.data.status == false) {
+                if (response && response.response && response.response.data && response.response.data.status == false) {
                     setLogin(false)
                     setToken(null)
                 }

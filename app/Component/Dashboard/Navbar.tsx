@@ -45,7 +45,7 @@ const Navbar = () => {
                             </svg>
                         </div>
                     </button>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow-lg border-none bg-base-100 rounded-md w-52 mt-3">
+                    <ul tabIndex={0} className="dropdown-content bg-white z-[1] menu p-2 shadow-lg border-none rounded-md w-52 mt-3">
                         <button onClick={() => handleNavigation('/dashboard')} className="button">
                             <div className="flex gap-3 justify-between w-full">
                                 Dashboard
