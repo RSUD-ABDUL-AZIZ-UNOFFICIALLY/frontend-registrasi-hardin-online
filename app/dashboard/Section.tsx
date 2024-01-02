@@ -49,7 +49,7 @@ const Section = () => {
                     </button>
                 </div>
                 <div className="pl-2 pr-4">
-                    <img src="/welcome.png" alt="" />
+                    <img className='h-40' src="/welcome.png" alt="" />
                 </div>
             </div>
             <div className="animasi-popup dropdown">

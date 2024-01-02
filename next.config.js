@@ -5,7 +5,8 @@ const nextConfig = {
         ignoreDuringBuilds: false,
     },
     env: {
-        base_url: process.env.base_url
+        base_url: process.env.base_url,
+        api_url: process.env.api_url,
     },
 }
 

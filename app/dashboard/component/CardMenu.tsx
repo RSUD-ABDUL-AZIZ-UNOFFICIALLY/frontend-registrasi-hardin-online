@@ -16,13 +16,13 @@ const CardMenu = () => {
                 <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 gap-2 justify-center items-center">
                     <button onClick={() => handleNavigasi(`/pendaftaran-online/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
-                            <img className='' src={'/calendar2.png'} alt="" />
+                            <img className='' src={'/icon/calendar.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Registrasi Online</div>
                     </button>
                     <button onClick={() => handleNavigasi(`/check-in/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
-                            <img className='' src={'/checkin.png'} alt="" />
+                            <img className='' src={'/icon/checkin.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Check In</div>
                     </button>
@@ -34,9 +34,15 @@ const CardMenu = () => {
                     </button> */}
                     <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
-                            <img className='' src={'/search.png'} alt="" />
+                            <img className='' src={'/icon/search.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Histori</div>
+                    </button>
+                    <button onClick={() => handleNavigasi(`/jadwal-poli`)} className="button-white shadow-lg aspect-square">
+                        <div className="flex justify-center h-[70%]">
+                            <img className='' src={'/icon/poli.webp'} alt="" />
+                        </div>
+                        <div className="text-[10px] h-[30%] text-black p-1 sticky">Cek Jadwal Poli</div>
                     </button>
                 </div>
             </div>
