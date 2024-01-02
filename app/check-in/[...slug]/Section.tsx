@@ -89,6 +89,8 @@ const Section = ({ slug }: { slug: string }) => {
             </div>
             <div className={`section shadow-lg`}>
                 {data ? data.map((item: any, index: number) => {
+                    console.log('item', item.penjab.png_jawab);
+
                     return (
                         <React.Fragment key={index}>
                             <div className="rounded-lg shadow-xl  p-0 flex overflow-hidden mb-3">
@@ -114,6 +116,10 @@ const Section = ({ slug }: { slug: string }) => {
                                     <div className="flex item-center gap-2">
                                         <div className="w-[30%] text-xs">Dokter</div>
                                         <div className="w-[70%] text-xs">{item.dokter.nm_dokter}</div>
+                                    </div>
+                                    <div className="flex item-center gap-2">
+                                        <div className="w-[30%] text-xs">Asuransi</div>
+                                        <div className="w-[70%] text-xs">{item.penjab.png_jawab}</div>
                                     </div>
                                     <div className="flex item-center gap-2">
                                         <div className="w-[30%] text-xs">Status</div>
