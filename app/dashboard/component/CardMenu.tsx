@@ -32,12 +32,12 @@ const CardMenu = () => {
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Rekam Medis</div>
                     </button> */}
-                    <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
+                    {/* <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/icon/search.png'} alt="" />
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Histori</div>
-                    </button>
+                    </button> */}
                     <button onClick={() => handleNavigasi(`/jadwal-poli`)} className="button-white shadow-lg aspect-square">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/icon/poli.webp'} alt="" />
