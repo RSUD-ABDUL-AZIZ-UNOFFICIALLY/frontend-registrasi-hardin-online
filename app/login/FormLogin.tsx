@@ -1,7 +1,6 @@
 'use client'
 import axios from 'axios'
 import moment from 'moment'
-// import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useContext, useEffect, useState } from 'react'
 import AlertDanger from '../Component/Assets/AlertDanger'
@@ -120,7 +119,7 @@ const FormLogin = () => {
         if (timess) {
             const loadingTime = parseInt(timess)
             setSeconds(loadingTime)
-            setTimeFormat(moment.duration(loadingTime, 'second'))
+            setTimeFormat(moment.duration(loadingTime, 'seconds'))
             const countdown = setInterval(() => {
                 if (seconds > 0) {
                     sessionStorage.setItem('loadingOtp', `${seconds - 1}`)

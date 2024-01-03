@@ -139,6 +139,24 @@ body {
         }
     }
 
+    select {
+        &.select {
+            padding: 10px;
+            width: 100%;
+            border-radius: 7px;
+            // height: 50px;
+            background-color: var(--color-white);
+        }
+
+        &:focus {
+            outline-width: 2px;
+            outline-color: var(--color-primary);
+            background-color: #fbfbfb;
+            // outline: none;
+
+        }
+    }
+
     label {
         color: var(--color-primary);
         // position: absolute;
@@ -433,6 +451,15 @@ button[disabled] {
     }
 }
 
+ul {
+    li {
+        &::before {
+            content: "\2023";
+            width: 5em;
+            margin-right: 10px;
+        }
+    }
+}
 
 @media only screen and (max-width: 600px) {
     /* Your CSS styles here */

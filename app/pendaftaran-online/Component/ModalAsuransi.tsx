@@ -21,14 +21,14 @@ const ModalAsuransi = () => {
     }, [])
     return (
         <div className=" mb-3">
-            <div className="flex gap-2">
-                <div className="w-[30%] p-2">Asuransi</div>
-                <div className="w-[70%]">
+            <div className="gap-2">
+                <div className="p-2">Pilih Asuransi</div>
+                <div className="">
                     <button onClick={() => handleOpenModal()} className="button-white shadow-md z-20">
-                        <div className="text-black text-xs">{context.asuransi ? context.asuransi.png_jawab : `Pilih Asuransi `}</div>
+                        <div className="text-black font-normal text-left">{context.asuransi ? context.asuransi.png_jawab : `Pilih Asuransi `}</div>
                     </button>
                 </div>
-                <div className={`modal-popup flex justify-center fixed backdrop-blur-sm bg-[#00000016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
+                <div className={`modal-popup flex justify-center fixed bg-[#22202016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
                     <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] items-center">
                         <div className={`section shadow-lg  ${modal == true ? 'scale-100' : `scale-0 `}`}>
                             <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ const ModalAsuransi = () => {
                                 {context.dataAsuransi && context.dataAsuransi.map((item: any, index: number) => {
                                     return (
                                         <React.Fragment key={index}>
-                                            <button onClick={() => handleModal(item)} className={`${context.asuransi && context.asuransi.kd_pj == item.kd_pj ? `button-primary` : `button-white`} shadow-md border`}>
+                                            <button onClick={() => handleModal(item)} className={`${context.asuransi && context.asuransi.kd_pj == item.kd_pj ? `button-primary` : `button-white`} shadow font-normal border`}>
                                                 {item.png_jawab}
                                             </button>
                                         </React.Fragment>

@@ -6,12 +6,9 @@ import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
 import { AuthContext } from '../context/AuthContext'
 
 const Section = () => {
-    const base_url = process.env.base_url
     const daftarOnline: any = useContext(DaftarOnlineContext)
     const auth: any = useContext(AuthContext)
     const [dropdown, setDropdown] = useState<boolean>(false)
-    const [dropdownSelect, setDropdownSelect] = useState<any>('Daftar keluarga')
-    const [iniData, setData] = useState<any>()
     const hanldleDropdown = () => {
         if (dropdown == true) {
             setDropdown(false)
@@ -22,8 +19,6 @@ const Section = () => {
     }
 
     const handleSelectDropDown = (e: any) => {
-        setDropdownSelect(e.nik)
-        setData(e)
         daftarOnline.setFamilySelect(e)
         setDropdown(false)
     }
@@ -52,36 +47,7 @@ const Section = () => {
                     <img className='h-40' src="/welcome.png" alt="" />
                 </div>
             </div>
-            <div className="animasi-popup dropdown">
-                <button className="button-white shadow-lg" onClick={hanldleDropdown}>
-                    <div className="flex justify-between items-center">
-                        <div className="text-left">
-                            <label className='text-sm font-normal' htmlFor=""><small>Nama Pendaftar</small></label>
-                            <div className="">{daftarOnline.familySelect ? daftarOnline.familySelect.nama : 'Pilih Dari Daftar Keluarga'}</div>
-                        </div>
-                        <div className={`${dropdown == true && `rotate-90`} duration-300`}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-                {dropdown == true &&
-                    <div className="grid gap-2 shadow-md p-4 mt-3 section">
-                        {daftarOnline && daftarOnline.dataFamily.map((item: any, index: number) => {
-                            return (
-                                <button key={index} onClick={() => handleSelectDropDown(item)} className={`${daftarOnline.familySelect && daftarOnline.familySelect.nik === item.nik ? `button-secondary` : `button-white`} shadow-md text-xs`}>
-                                    <div className="animasi-popup">
-                                        <p>{`${item.nama} - (${item.noRm})`}</p>
-                                        <small className='font-xs'>{`${item.nik}`}</small>
-                                    </div>
-                                </button>
-                            )
-                        })}
-                    </div>
-                }
-            </div>
-            {daftarOnline.familySelect && <CardMenu />}
+            <CardMenu />
         </React.Fragment >
     )
 }

@@ -18,16 +18,16 @@ const ModalPoli = () => {
     return (
         <div className=" mb-3">
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <div className="flex items-center gap-2">
-                <div className="w-[30%] p-2">Poli</div>
-                <div className="w-[70%]">
+            <div className="items-center gap-2">
+                <div className="p-2">Pilih Poli</div>
+                <div className="">
 
                     <button onClick={() => handleOpenModal()} className="button-white shadow-md">
-                        <div className="text-black text-xs">{context.poli ? context.poli.nm_poli : `Pilih Poli `}</div>
+                        <div className="text-black font-normal text-left">{context.poli ? context.poli.nm_poli : `Pilih Poli `}</div>
                     </button>
                 </div>
             </div>
-            <div className={`modal-popup flex justify-center fixed backdrop-blur-sm  bg-[#00000016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden`} `}>
+            <div className={`modal-popup flex justify-center fixed bg-[#22202016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden`} `}>
                 <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] items-center ">
                     <div className={`section shadow-lg  ${modal == true ? 'scale-100' : `scale-0 `} `}>
                         <div className="flex items-center gap-3">
@@ -47,7 +47,7 @@ const ModalPoli = () => {
                             {context.dataPoli && context.dataPoli.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `button-primary` : `button-white`} shadow-lg`}>
+                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `button-primary` : `button-white`} shadow font-normal`}>
                                             {item.nm_poli}
                                         </button>
                                     </React.Fragment>

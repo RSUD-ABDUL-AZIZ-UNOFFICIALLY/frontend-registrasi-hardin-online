@@ -118,7 +118,7 @@ const FormRegister = () => {
         if (loading || timess) {
             const loadingTime = parseInt(timess)
             setSeconds(loadingTime)
-            setTimeFormat(moment.duration(loadingTime, 'second'))
+            setTimeFormat(moment.duration(loadingTime, 'seconds'))
             const countdown = setInterval(() => {
                 if (seconds > 0) {
                     sessionStorage.setItem('loadingOtpRegis', `${seconds - 1}`)

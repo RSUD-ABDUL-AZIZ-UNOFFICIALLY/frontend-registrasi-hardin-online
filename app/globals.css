@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -104,6 +105,17 @@ body {
   background-color: var(--color-white);
 }
 .form-input input:focus {
+  outline-width: 2px;
+  outline-color: var(--color-primary);
+  background-color: #fbfbfb;
+}
+.form-input select.select {
+  padding: 10px;
+  width: 100%;
+  border-radius: 7px;
+  background-color: var(--color-white);
+}
+.form-input select:focus {
   outline-width: 2px;
   outline-color: var(--color-primary);
   background-color: #fbfbfb;
@@ -351,6 +363,12 @@ button[disabled]:active {
     opacity: 0;
     display: none;
   }
+}
+
+ul li::before {
+  content: "‣";
+  width: 5em;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 600px) {

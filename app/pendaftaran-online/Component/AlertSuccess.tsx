@@ -18,7 +18,7 @@ const AlertSuccess = ({ data }: { data: any }) => {
         }, 3000)
     }, [])
     return (
-        <div className={`modal-popup flex justify-center fixed backdrop-blur-sm bg-[#00000016] h-[100vh] w-[100vw] top-0 left-0`}>
+        <div className={`modal-popup flex justify-center fixed bg-[#22202016] h-[100vh] w-[100vw] top-0 left-0`}>
             <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] h-full items-center">
                 <div className="w-full">
                     {loading == true ?
@@ -85,7 +85,7 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                             Kembali Ke Dashboard
                                         </div>
                                     </button>
-                                    <button onClick={() => handleNavigation(`/check-in/${context.familySelect.nik}`)} className="button-secondary mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation(`/check-in`)} className="button-secondary mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Check In
                                         </div>

@@ -19,12 +19,12 @@ const ModalDokter = () => {
 
     return (
         <div className=" mb-3">
-            <div className="flex items-center gap-2">
-                <div className="w-[30%] p-2">Dokter</div>
-                <div className="w-[70%]">
+            <div className="items-center gap-2">
+                <div className="p-2">Pilih Dokter</div>
+                <div className="">
                     {context.dataDokter && context.dataDokter.length > 0 ?
                         <button onClick={() => handleOpenModal()} className="button-white shadow-md">
-                            <div className="text-black text-xs">{context.dokter ? context.dokter.dokter.nm_dokter : `Pilih Dokter `}</div>
+                            <div className="text-black font-normal text-left">{context.dokter ? context.dokter.dokter.nm_dokter : `Pilih Dokter `}</div>
                         </button>
                         :
                         <div className="section shadow-md text-red-500 text-center">
@@ -33,7 +33,7 @@ const ModalDokter = () => {
                     }
                 </div>
             </div>
-            <div className={`modal-popup flex justify-center fixed backdrop-blur-sm bg-[#00000016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
+            <div className={`modal-popup flex justify-center fixed bg-[#22202016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
                 <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] items-center">
                     <div className={`section shadow-lg  ${modal == true ? 'scale-100' : `scale-0 `}`}>
                         <div className="flex items-center gap-3">
@@ -53,7 +53,7 @@ const ModalDokter = () => {
                             {context.dataDokter && context.dataDokter.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <button onClick={() => handleModal(item)} className={`${context.dokter && context.dokter.kd_dokter == item.kd_dokter ? `button-primary` : `button-white`} shadow-md border`}>
+                                        <button onClick={() => handleModal(item)} className={`${context.dokter && context.dokter.kd_dokter == item.kd_dokter ? `button-primary` : `button-white`} shadow border font-normal`}>
                                             {item.dokter.nm_dokter}
                                             <div className="flex text-center justify-center font-light">
                                                 <small>{`${item.jam_mulai} - ${item.jam_selesai}`}</small>

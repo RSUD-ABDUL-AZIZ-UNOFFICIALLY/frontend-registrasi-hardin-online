@@ -32,7 +32,7 @@ const Navbar = () => {
     }, [])
     return (
         <div className='navbar shadow-md'>
-            <div className="aspect-square shadow-md h-full p-2 rounded-[7px]">
+            <div className="aspect-square  h-full p-1 rounded-[7px]">
                 <img className='' src="/skw.png" alt="" />
                 {/* Hai, Amirull Azmi */}
             </div>

@@ -43,9 +43,7 @@ const Section = ({ slug }: { slug: string }) => {
             <div className={`section shadow-lg`}>
                 <div className="section text-center">Tidak Ada Histori Registrasi</div>
             </div>
-
         </React.Fragment>
-
     )
 }
 
