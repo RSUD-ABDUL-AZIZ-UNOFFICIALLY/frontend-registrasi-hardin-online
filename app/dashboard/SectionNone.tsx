@@ -3,7 +3,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import CardLoginSuccess from '../Component/Dashboard/CardLoginSuccess'
 import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
 import { AuthContext } from '../context/AuthContext'
-
+import Image from 'next/image'
+import welcome from '../../public/hardin/welcome_hardin.jpg'
+import wajib from '../../public/hardin/wajib_hardin.jpg'
 const SectionNone = () => {
     const [alert, setAlert] = useState<boolean>(true)
     const auth: any = useContext(AuthContext)
@@ -23,7 +25,10 @@ const SectionNone = () => {
                         </div>
                     </div>
                     <div className="pl-2 pr-4">
-                        <img src="/welcome.png" alt="" />
+                        <Image
+                            src={welcome}
+                            alt="Picture of the author"
+                        />
                     </div>
                 </div>
                 <div className='rounded-lg shadow-lg p-3 animasi-popup'>
@@ -38,17 +43,20 @@ const SectionNone = () => {
                     </div>
                 </div>
                 <div className="card shadow-lg bg-[#ffffff] animasi-popup">
-                    <img src="/wajib.png" alt="" />
+                    <Image
+                        src={wajib}
+                        alt="Picture of the author"
+                    />
                     {/* <div className="gap-3 p-3 flex justify-center">
                     <img className='w-[30%]' src="/doc2.png" alt="" />
                 </div> */}
-                    <div className="p-2">
+                    {/* <div className="p-2">
                         <ul className='grid gap-1 justify-center items-center text-center text-lg font-bold'>
                             <li>KTP</li>
                             <li>Kartu Keluarga</li>
                             <li>BPJS (Optional)</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </React.Fragment >

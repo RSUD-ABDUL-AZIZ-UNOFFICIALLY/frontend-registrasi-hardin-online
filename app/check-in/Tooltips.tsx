@@ -22,22 +22,22 @@ const Tooltips = () => {
         <React.Fragment>
             <div ref={ref} className={`bg-sky-600 p-4 mb-3 rounded-b-xl ease-in-out duration-300 fixed left-0 z-30 top-0 ${tooltips == false ? `translate-y-[-100%]` : ``} w-full`}>
                 <div className="text-white">
-                    <div className="text-2xl uppercase font-semibold">
-                        Seputar Check In
+                    <div className="text-3xl uppercase font-bold">
+                        Check In
                     </div>
                     <div className="text-justify text-zinc-200">
-                        Fitur Check In merupakan fitur untuk memverifikasi proses registrasi yang sudah dilakukan, berikut tata cara check ini:
+                        <span className='font-bold text-yellow-400 uppercase'>Check In</span> merupakan fitur untuk memverifikasi proses registrasi yang sudah dilakukan, berikut tata cara check ini:
                     </div>
                     <div className=" text-zinc-200">
                         <ul className='pl-8'>
                             <li className='marker'>
-                                Check In dapat dilakukan pada hari/tanggal periksa.
+                                Check In dapat dilakukan pada <span className='font-bold text-yellow-400 uppercase'>hari/tanggal periksa.</span>
                             </li>
                             <li className='marker'>
-                                Untuk pasien dengan asuransi BPJS dapat check in dengan mengunjungi Loket 4 pada RSUD dr Abdul Aziz untuk melakukan scan finger.
+                                Bagi pasien pengguna asuransi BPJS harus melakukan scan finger terlebih dahulu pada <span className='font-bold text-yellow-400 uppercase'>Loket 4</span> untuk verifikasi registrasi pendaftaran
                             </li>
                             <li>
-                                Untuk pasien selain BPJS dapat langsung melakukan check in pada aplikasi
+                                Untuk pasien umum dapat langsung menuju ke <span className='font-bold text-yellow-400 uppercase'>poli tujuan</span> dan melakukan chekin pada aplikasi
                             </li>
                         </ul>
                     </div>

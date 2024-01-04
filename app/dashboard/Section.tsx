@@ -4,7 +4,8 @@ import CardMenu from './component/CardMenu'
 import axios from 'axios'
 import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
 import { AuthContext } from '../context/AuthContext'
-
+import Image from 'next/image'
+import welcome from '../../public/hardin/welcome_hardin.jpg'
 const Section = () => {
     const daftarOnline: any = useContext(DaftarOnlineContext)
     const auth: any = useContext(AuthContext)
@@ -37,14 +38,18 @@ const Section = () => {
                             {auth && auth.dataProfile && auth.dataProfile.fullname}
                         </div>
                     </div>
-                    <button onClick={() => auth.setAlertWelcome(false)} className="button w-fit button-transparant rounded-full flex items-center">
+                    {/* <button onClick={() => auth.setAlertWelcome(false)} className="button w-fit button-transparant rounded-full flex items-center">
                         <span className="material-symbols-outlined">
                             close
                         </span>
-                    </button>
+                    </button> */}
                 </div>
                 <div className="pl-2 pr-4">
-                    <img className='h-40' src="/welcome.png" alt="" />
+                    <Image
+                        src={welcome}
+                        alt="Picture of the author"
+                    />
+                    {/* <img className='h-40' src="/welcome.png" alt="" /> */}
                 </div>
             </div>
             <CardMenu />
