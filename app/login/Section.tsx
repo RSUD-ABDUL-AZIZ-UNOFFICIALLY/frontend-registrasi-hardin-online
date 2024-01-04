@@ -1,9 +1,18 @@
 'use client'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import FormLogin from './FormLogin'
 import HeaderLogin from '../Component/HeaderLogin'
+import { AuthContext } from '../context/AuthContext'
+import { useRouter } from 'next/navigation'
 
-const section = () => {
+const Section = () => {
+    const auth: any = useContext(AuthContext)
+    const router = useRouter()
+    useEffect(() => {
+        if (auth.login == true) {
+            router.push('/dashboard')
+        }
+    }, [auth.login])
     return (
         <React.Fragment>
             <div className="login">
@@ -23,4 +32,4 @@ const section = () => {
     )
 }
 
-export default section  
+export default Section  

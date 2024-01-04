@@ -27,18 +27,6 @@ const CardMenu = () => {
                         </div>
                         <div className="text-[10px] h-[30%] text-black p-1 sticky">Check In</div>
                     </button>
-                    {/* <button onClick={() => handleNavigasi(`#`)} className="button-white shadow-lg aspect-square animasi-popup">
-                        <div className="flex justify-center h-[70%]">
-                            <img className='' src={'/doc2.png'} alt="" />
-                        </div>
-                        <div className="text-[10px] h-[30%] text-black p-1 sticky">Rekam Medis</div>
-                    </button> */}
-                    {/* <button onClick={() => handleNavigasi(`/history/${daftarOnline.familySelect.nik}`)} className="button-white shadow-lg aspect-square animasi-popup">
-                        <div className="flex justify-center h-[70%]">
-                            <img className='' src={'/icon/search.png'} alt="" />
-                        </div>
-                        <div className="text-[10px] h-[30%] text-black p-1 sticky">Histori</div>
-                    </button> */}
                     <button onClick={() => handleNavigasi(`/jadwal-poli`)} className="button-white shadow-lg aspect-square animasi-popup">
                         <div className="flex justify-center h-[70%]">
                             <img className='' src={'/icon/poli.webp'} alt="" />

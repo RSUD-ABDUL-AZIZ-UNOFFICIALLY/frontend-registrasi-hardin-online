@@ -52,12 +52,11 @@ export const AuthProvider = ({ children }: { children: any }) => {
         sessionStorage.removeItem('loadingOtpRegis')
         setLogin(false)
         setToken(null)
-        router.push('/login')
+        // router.push('/login')
     }
     useEffect(() => {
         checkAuth()
-
-    })
+    }, [login, token])
     return (
         <AuthContext.Provider value={{ dataSelect, setDataSelect, token, login, logout, dataProfile, alertWelcome, setAlertWelcome, checkAuth }}>
             {children}
