@@ -15,7 +15,7 @@ const ModalSuccess = () => {
         }, 3000)
     }, [])
     return (
-        <div className='fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#22202016] flex items-center justify-center z-10'>
+        <div className='fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#22202057] flex items-center justify-center z-10'>
             <div className="w-[90%] bg-white rounded-lg shadow-2xl p-3">
                 <div className="flex justify-center">
                     {/* <img className='h-40' src="/success.gif" alt="" /> */}

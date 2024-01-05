@@ -20,15 +20,12 @@ const ModalSuccess = () => {
 
     const handleDaftarOnline = async () => {
         const body = {
-            no_rkm_medis: context.noRm,
+            no_rkm_medis: context.familySelect.noRm,
             tanggal_periksa: context.dateBooking,
             kd_dokter: context.dokter.kd_dokter,
             kd_poli: context.poli.kd_poli,
             kd_pj: context.asuransi.kd_pj
         }
-
-        console.log('body', body);
-
 
         const token = sessionStorage.getItem('authToken')
         if (token) {

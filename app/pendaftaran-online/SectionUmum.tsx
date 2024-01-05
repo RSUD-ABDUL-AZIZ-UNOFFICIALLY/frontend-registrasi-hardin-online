@@ -79,7 +79,7 @@ const SectionUmum = () => {
                     </div>
                 </div>
             </div>
-            <ModalPoli />
+            {context.nik && <ModalPoli />}
             {context.poli && <ModalDokter />}
             {context.poli && context.dokter &&
                 <div className="items-center gap-2 mb-3">
@@ -91,7 +91,8 @@ const SectionUmum = () => {
             }
             {context.poli && context.dokter && <ModalAsuransi />}
             <div className="mt-5 mb-5">
-                {!context.poli && !context.dokter && <small className='p-3 w-fit rounded-lg text-red-600'>*Poli Wajib Di Pilih</small>}
+                {!context.nik && <small className='p-3 w-fit rounded-lg text-red-600'>*Pendaftar Wajib Di Pilih</small>}
+                {context.nik && !context.poli && !context.dokter && <small className='p-3 w-fit rounded-lg text-red-600'>*Poli Wajib Di Pilih</small>}
                 {context.poli && !context.dokter && <small className='p-3 w-fit rounded-lg text-red-600'>*Dokter Wajib Di Pilih</small>}
                 {context.poli && context.dokter && !context.asuransi && <small className='p-3 w-fit rounded-lg text-red-600'>*Asuransi Wajib Di Pilih</small>}
                 {context.poli && context.dokter && context.asuransi && <small className='p-3 w-fit rounded-lg text-green-500'>*Data Sudah Lengkap </small>}

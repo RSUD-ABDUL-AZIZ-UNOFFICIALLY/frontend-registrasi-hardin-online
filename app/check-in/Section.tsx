@@ -98,7 +98,7 @@ const Section = () => {
 
     useEffect(() => {
         getDaftarBooking()
-    }, [context.familySelect])
+    }, [context.nik])
 
     return (
         <React.Fragment>
@@ -138,8 +138,6 @@ const Section = () => {
             </div>
             <div className={`section shadow-lg animasi-popup`}>
                 {data ? data.map((item: any, index: number) => {
-                    console.log('item', item.kd_pj);
-
                     return (
                         <React.Fragment key={index}>
                             <div className="rounded-lg shadow-xl animasi-popup p-0 flex overflow-hidden mb-3">

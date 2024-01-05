@@ -28,7 +28,7 @@ const ModalAsuransi = () => {
                         <div className="text-black font-normal text-left">{context.asuransi ? context.asuransi.png_jawab : `Pilih Asuransi `}</div>
                     </button>
                 </div>
-                <div className={`modal-popup flex justify-center fixed bg-[#22202016] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
+                <div className={`modal-popup flex justify-center fixed bg-[#22202057] ${modal == true ? 'h-[100vh] w-[100vw] top-0 left-0' : `hidden `}`}>
                     <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] items-center">
                         <div className={`section shadow-lg  ${modal == true ? 'scale-100' : `scale-0 `}`}>
                             <div className="flex items-center gap-3">

@@ -12,6 +12,10 @@ const AlertError = () => {
     const handleNavigation = (e: string) => {
         router.push(e)
     }
+    const handleBackTo = () => {
+        context.handleReset()
+        router.push('/pendaftaran-online')
+    }
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
@@ -19,7 +23,7 @@ const AlertError = () => {
         }, 3000)
     }, [])
     return (
-        <div className={`modal-popup flex justify-center fixed bg-[#22202016] h-[100vh] w-[100vw] top-0 left-0`}>
+        <div className={`modal-popup flex justify-center fixed bg-[#22202057] h-[100vh] w-[100vw] top-0 left-0`}>
             <div className="p-4 flex lg:w-[50%] md:w-[70%] w-[100%] h-full items-center">
                 <div className="w-full">
                     {loading == true ?
@@ -35,13 +39,13 @@ const AlertError = () => {
                                     {/* <img className='h-20' src="/error.gif" alt="" /> */}
                                     <Image
                                         src={errorGif}
-                                        height={50}
+                                        height={100}
                                         alt="Error Gif"
                                     />
                                 </div>
                                 <div className="text-center uppercase font-bold mt-2">Gagal !</div>
-                                <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Anda Sudah Pernah Melakukan Pendaftaran Pada Hari Ini,  Cek Check In</div>
-                                <div className="flex gap-2">
+                                <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Pendaftar Sudah Pernah Melakukan Pendaftaran Pada Hari Ini,  Cek Check In</div>
+                                <div className="grid grid-cols-2 gap-2">
                                     <button onClick={() => handleNavigation('/dashboard')} className="button-warning mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Kembali Ke Dashboard
@@ -50,6 +54,11 @@ const AlertError = () => {
                                     <button onClick={() => handleNavigation(`/check-in`)} className="button-info mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Lihat Check In
+                                        </div>
+                                    </button>
+                                    <button onClick={handleBackTo} className="col-span-2 button-primary mt-3 shadow-xl">
+                                        <div className="text-sm">
+                                            Daftar Kembali
                                         </div>
                                     </button>
                                 </div>

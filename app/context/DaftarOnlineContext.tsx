@@ -130,19 +130,23 @@ export const DaftarOnlineProvider = ({ children }: { children: any }) => {
         setDokter(null)
     }
 
+    const handleReset = () => {
+        setPoli(null)
+        setDokter(null)
+        setAsuransi(null)
+    }
+
     useEffect(() => {
         getFamily()
         getDokter()
         getAsuransi()
-        console.log(dokter);
-        
-    }, [poli, dateBooking, nik, dokter])
+    }, [poli, dateBooking, nik, dokter, familySelect])
 
     return (
         <DaftarOnlineContext.Provider
             value={{
                 nik, name, noRm, poli, dokter, dataPoli, dataDokter, dataFamily, setDataFamily, dateBooking, setDateBooking, dataAsuransi, asuransi, setAsuransi,
-                handleNik, handleName, handleNoRm, handlePoli, handleDokter, familySelect, setFamilySelect, getPoli, getDokter, handleDateBooking, getFamily, getAsuransi,
+                handleNik, handleName, handleNoRm, handlePoli, handleDokter, familySelect, setFamilySelect, getPoli, getDokter, handleDateBooking, getFamily, getAsuransi, handleReset
             }}>
             {children}
         </DaftarOnlineContext.Provider>
