@@ -7,27 +7,11 @@ import { AuthContext } from '../context/AuthContext'
 import Image from 'next/image'
 import welcome from '../../public/hardin/welcome_hardin.jpg'
 const Section = () => {
-    const daftarOnline: any = useContext(DaftarOnlineContext)
     const auth: any = useContext(AuthContext)
-    const [dropdown, setDropdown] = useState<boolean>(false)
-    const hanldleDropdown = () => {
-        if (dropdown == true) {
-            setDropdown(false)
-        }
-        if (dropdown == false) {
-            setDropdown(true)
-        }
-    }
-
-    const handleSelectDropDown = (e: any) => {
-        daftarOnline.setFamilySelect(e)
-        setDropdown(false)
-    }
-
 
     useEffect(() => {
         auth.checkAuth()
-    }, [auth])
+    }, [])
     return (
         <React.Fragment>
             <div className={`animasi-popup rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${auth && auth.alertWelcome == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
@@ -47,9 +31,8 @@ const Section = () => {
                 <div className="pl-2 pr-4">
                     <Image
                         src={welcome}
-                        alt="Picture of the author"
+                        alt="welcome image"
                     />
-                    {/* <img className='h-40' src="/welcome.png" alt="" /> */}
                 </div>
             </div>
             <CardMenu />

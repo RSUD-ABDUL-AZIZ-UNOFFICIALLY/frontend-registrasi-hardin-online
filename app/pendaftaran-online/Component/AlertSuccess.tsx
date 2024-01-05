@@ -2,6 +2,9 @@ import React, { useState, useEffect, useContext } from 'react'
 import { CircularProgress } from "@nextui-org/react";
 import { DaftarOnlineContext } from '@/app/context/DaftarOnlineContext';
 import { useRouter } from 'next/navigation';
+import successGif from '../../../public/success.gif'
+import Image from 'next/image';
+import moment from 'moment';
 
 const AlertSuccess = ({ data }: { data: any }) => {
     const [loading, setLoading] = useState<boolean>(false)
@@ -31,7 +34,12 @@ const AlertSuccess = ({ data }: { data: any }) => {
                         <React.Fragment>
                             <div className={`section shadow-lg `}>
                                 <div className="flex justify-center">
-                                    <img className='h-20' src="/success.gif" alt="" />
+                                    {/* <img className='h-20' src="/success.gif" alt="" /> */}
+                                    <Image
+                                        src={successGif}
+                                        height={100}
+                                        alt="Success Gif"
+                                    />
                                 </div>
                                 <div className="text-center p-3 text-lime-700 text-sm rounded-lg shadow-lg mb-3">Berhasil Melakukan Registrasi</div>
                                 <div className="rounded-lg shadow-xl  p-0 flex overflow-hidden">
@@ -68,7 +76,7 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                         </div>
                                         <div className="flex item-center gap-2">
                                             <div className="w-[30%] text-xs">Tanggal</div>
-                                            <div className="w-[70%] text-xs">{data && data.tanggal_periksa}</div>
+                                            <div className="w-[70%] text-xs">{data && moment(data.tanggal_periksa).format('DD MMMM YYYY')}</div>
                                         </div>
                                         {/* <div className="flex justify-center">
                                             <div className="w-40 p-3">

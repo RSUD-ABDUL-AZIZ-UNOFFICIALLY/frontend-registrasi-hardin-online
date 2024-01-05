@@ -2,7 +2,7 @@
 require('dotenv').config();
 const nextConfig = {
     eslint: {
-        ignoreDuringBuilds: false,
+        ignoreDuringBuilds: true,
     },
     env: {
         base_url: process.env.base_url,

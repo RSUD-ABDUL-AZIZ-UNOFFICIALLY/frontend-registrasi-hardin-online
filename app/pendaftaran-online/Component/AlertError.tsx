@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import { CircularProgress } from "@nextui-org/react";
 import { DaftarOnlineContext } from '@/app/context/DaftarOnlineContext';
 import { useRouter } from 'next/navigation';
+import errorGif from '../../../public/error.gif'
+import Image from 'next/image';
 
 const AlertError = () => {
     const [loading, setLoading] = useState<boolean>(false)
@@ -30,7 +32,12 @@ const AlertError = () => {
                         <React.Fragment>
                             <div className={`section shadow-lg `}>
                                 <div className="flex justify-center">
-                                    <img className='h-20' src="/error.gif" alt="" />
+                                    {/* <img className='h-20' src="/error.gif" alt="" /> */}
+                                    <Image
+                                        src={errorGif}
+                                        height={50}
+                                        alt="Error Gif"
+                                    />
                                 </div>
                                 <div className="text-center uppercase font-bold mt-2">Gagal !</div>
                                 <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Anda Sudah Pernah Melakukan Pendaftaran Pada Hari Ini,  Cek Check In</div>

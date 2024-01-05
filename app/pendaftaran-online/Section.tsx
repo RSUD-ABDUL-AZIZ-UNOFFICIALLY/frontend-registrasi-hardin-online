@@ -1,8 +1,7 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { DaftarOnlineContext, DaftarOnlineProvider } from '@/app/context/DaftarOnlineContext';
+import React from 'react'
+import { DaftarOnlineProvider } from '@/app/context/DaftarOnlineContext';
 import SectionUmum from './SectionUmum';
-import SectionBPJS from './SectionBPJS';
 
 const Section = () => {
     return (

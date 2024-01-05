@@ -1,42 +1,30 @@
 'use client'
 import { AuthContext } from '@/app/context/AuthContext'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { useState, useContext, useRef, useEffect } from 'react'
-
+import skwPng from '../../../public/skw.png'
 const Navbar = () => {
-    const router = useRouter()
-    const [dropdown, setDropdown] = useState<boolean>()
-    const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const router: any = useRouter()
     const auth: any = useContext(AuthContext)
-    const handleDropdown = () => {
-        setDropdown(true)
-    }
     const handleNavigation = (e: string) => {
         router.push(e)
     }
 
     useEffect(() => {
         auth.checkAuth()
-        function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node | null)) {
-                setDropdown(false)
-            }
-        }
-
-        document.addEventListener('mousedown', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-
     }, [])
     return (
         <div className='navbar shadow-md'>
             <div className="aspect-square  h-full p-1 rounded-[7px]">
-                <img className='' src="/skw.png" alt="" />
+                {/* <img className='' src="/skw.png" alt="" /> */}
+                <Image
+                    src={skwPng}
+                    alt="Skw Icon"
+                />
                 {/* Hai, Amirull Azmi */}
             </div>
-            <div className="flex" ref={dropdownRef}>
+            <div className="flex">
                 <div className="dropdown dropdown-end">
                     <button tabIndex={0} role="button" className="button shadow-md aspect-square">
                         <div className="flex justify-center">

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 
 const Section = () => {
     const auth: any = useContext(AuthContext)
-    const router = useRouter()
+    const router: any = useRouter()
     useEffect(() => {
         if (auth.login == true) {
             router.push('/dashboard')

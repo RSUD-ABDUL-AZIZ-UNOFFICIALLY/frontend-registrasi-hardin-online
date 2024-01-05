@@ -27,7 +27,7 @@ const SectionNone = () => {
                     <div className="pl-2 pr-4">
                         <Image
                             src={welcome}
-                            alt="Picture of the author"
+                            alt="welcome image"
                         />
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const SectionNone = () => {
                 <div className="card shadow-lg bg-[#ffffff] animasi-popup">
                     <Image
                         src={wajib}
-                        alt="Picture of the author"
+                        alt="berkas wajib bawa image"
                     />
                     {/* <div className="gap-3 p-3 flex justify-center">
                     <img className='w-[30%]' src="/doc2.png" alt="" />

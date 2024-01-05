@@ -174,7 +174,7 @@ const Section = () => {
                         {dataAntrian.data.map((item: typeDataAntrian, index: number) => {
                             return (
                                 <React.Fragment key={index}>
-                                    <div className={`animasi-popup duration-[400ms] p-2 text-center border rounded-md ${item.status == 'Sudah' ? 'bg-green-400 border-green-400 text-white' : item.status == 'Belum' ? 'bg-yellow-100 border-yellow-100 ' : item.status == 'Batal' ? 'bg-red-500 border-red-500 text-white' : 'bg-white'}`}>
+                                    <div className={`animasi-popup duration-[400ms] p-2 text-center border rounded-md ${item.status == 'Sudah' ? 'bg-green-400 border-green-400 text-white' : item.status == 'Belum' ? 'bg-yellow-300 border-yellow-300 ' : item.status == 'Batal' ? 'bg-red-500 border-red-500 text-white' : 'bg-white'}`}>
                                         <div className="text-2xl font-bold">
                                             {item.no_reg}
                                         </div>

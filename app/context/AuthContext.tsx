@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
     }
     useEffect(() => {
         checkAuth()
-    }, [login, token])
+    }, [login, token, checkAuth])
     return (
         <AuthContext.Provider value={{ dataSelect, setDataSelect, token, login, logout, dataProfile, alertWelcome, setAlertWelcome, checkAuth }}>
             {children}

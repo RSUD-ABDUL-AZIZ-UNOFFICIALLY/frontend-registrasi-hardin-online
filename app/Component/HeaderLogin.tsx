@@ -1,11 +1,17 @@
 import React from 'react'
+import SkwLogo from '../../public/skw.png'
+import Image from 'next/image'
 
 const HeaderLogin = () => {
     return (
         <div className="header mb-4 mt-[40px]">
             <div className="flex justify-center">
                 <div className="">
-                    <img className='h-20' src="/skw.png" alt="" />
+                    <Image
+                        src={SkwLogo}
+                        height={100}
+                        alt="Skw Icon"
+                    />
                 </div>
             </div>
             <div className="grid justify-center text-center mt-2">
