@@ -35,7 +35,6 @@ const ModalSuccess = () => {
                         'Authorization': 'Bearer ' + token
                     }
                 });
-                console.log('daftar', response.data.data);
                 if (response.data.error == false) {
                     setSuccess(true)
                     setDataSuccess(response.data.data)
@@ -43,7 +42,6 @@ const ModalSuccess = () => {
 
             } catch (error) {
                 const response: any = error
-                console.log('error', response.response.data.error);
                 if (response.response.data.error == true) {
                     setError(true)
                 }
