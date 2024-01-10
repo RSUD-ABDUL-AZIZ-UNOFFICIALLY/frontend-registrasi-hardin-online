@@ -176,7 +176,7 @@ const FormRegister = () => {
                 {successOtp && <AlertSuccess desc={descSuccessOtp} />}
                 <div className="form-input">
                     <label htmlFor="">NIK</label>
-                    <input value={nik} onChange={(e) => setNik(e.target.value)} className='shadow-lg input' type="text" placeholder='Masukan NIK' />
+                    <input value={nik} onChange={(e) => setNik(e.target.value)} className='shadow-lg input' type="number" placeholder='Masukan NIK' />
                 </div>
                 {name && phone && otp && nik ?
                     <div className="text-green-500 flex items-center gap-1">
