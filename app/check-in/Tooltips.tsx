@@ -34,10 +34,10 @@ const Tooltips = () => {
                                 Check In dapat dilakukan pada <span className='font-bold text-yellow-400 uppercase'>hari/tanggal periksa.</span>
                             </li>
                             <li className='marker'>
-                                Bagi pasien pengguna asuransi BPJS harus melakukan scan finger terlebih dahulu pada <span className='font-bold text-yellow-400 uppercase'>Loket 4</span> untuk verifikasi registrasi pendaftaran
+                                Bagi pasien pengguna asuransi BPJS harus melakukan scan finger terlebih dahulu pada <span className='font-bold text-yellow-400 uppercase'>Loket 4</span> untuk verifikasi registrasi pendaftaran.
                             </li>
                             <li>
-                                Untuk pasien umum dapat langsung menuju ke <span className='font-bold text-yellow-400 uppercase'>poli tujuan</span> dan melakukan chekin pada aplikasi
+                                Untuk pasien umum dapat langsung menuju ke <span className='font-bold text-yellow-400 uppercase'>poli tujuan</span> dan melakukan chekin pada aplikasi.
                             </li>
                         </ul>
                     </div>
