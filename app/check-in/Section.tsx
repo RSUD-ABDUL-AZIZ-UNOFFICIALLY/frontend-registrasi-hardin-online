@@ -222,10 +222,10 @@ const Section = () => {
                                                             </React.Fragment>
                                                             :
                                                             < React.Fragment >
-                                                                <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="button-success text-[10px] w-fit">
+                                                                <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="button-success text-[10px] w-fit text-white">
                                                                     Check In
                                                                 </button>
-                                                                <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="button-secondary text-[10px] w-fit">
+                                                                <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="button-secondary text-[10px] w-fit text-white">
                                                                     Batal
                                                                 </button>
                                                             </React.Fragment>
