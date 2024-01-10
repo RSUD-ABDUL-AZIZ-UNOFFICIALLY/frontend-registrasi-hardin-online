@@ -317,13 +317,13 @@ button {
 
     &.button-success {
         background-color: var(--color-success);
-        color: var(--color-black);
+        color: var(--color-white);
+        // color: var(--color-black);
 
         &:hover {
             background-color: var(--color-success-hover);
         }
 
-        // color: var(--color-white);
     }
 
     &:active {
