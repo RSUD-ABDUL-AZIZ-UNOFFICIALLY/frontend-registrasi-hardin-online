@@ -6,18 +6,18 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --color-primary: #352e6a;
-  --color-primary-hover: #302a5f;
-  --color-primary-second: #433994;
-  --color-primary-second-hover: #403689;
+  --color-primary: #2e997d;
+  --color-primary-hover: #328e75;
+  --color-primary-second: #2e997d;
+  --color-primary-second-hover: #328e75;
   --color-white: #FFFFFF;
   --color-white-hover: #f6f6f6;
-  --color-secondary: #ee314c;
-  --color-secondary-hover: #de344e;
+  --color-secondary: #46a0dc;
+  --color-secondary-hover: #4596cd;
   --color-success: #31ee76;
   --color-success-hover: #2fda6e;
-  --color-info: #60C8D9;
-  --color-info-hover: #5fc1d1;
+  --color-info: #1c1c1c;
+  --color-info-hover: #0e0e0e;
   --color-ghost: #F2F2F2;
   --color-ghost-hover: #e8e8e8;
   --color-black: #130101;
@@ -37,6 +37,7 @@ body {
   color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   min-width: 100vw;
+  font-family: Verdana;
   background: url("/bg/bg6.avif");
   background-size: cover;
 }
@@ -70,14 +71,12 @@ body {
 }
 
 .bg-login {
+  background: url("/bg/bg-login2.jpg");
   background-size: cover;
 }
 
 .header {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  color: #201a1a;
-  filter: drop-shadow(0px 4px 3px #c9c9c9);
-  stroke-width: 10px;
+  color: var(--color-white);
 }
 
 .login {
@@ -258,7 +257,7 @@ button.button-warning:hover {
 }
 button.button-success {
   background-color: var(--color-success);
-  color: var(--color-black);
+  color: var(--color-white);
 }
 button.button-success:hover {
   background-color: var(--color-success-hover);
@@ -373,6 +372,29 @@ ul li::before {
 
 @media only screen and (max-width: 600px) {
   /* Your CSS styles here */
+}
+.text-white {
+  color: var(--color-white);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+.text-ghost {
+  color: var(--color-ghost);
 }
 
 /*# sourceMappingURL=globals.css.map */

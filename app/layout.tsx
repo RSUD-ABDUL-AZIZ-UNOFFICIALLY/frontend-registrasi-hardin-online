@@ -8,13 +8,13 @@ import { DaftarOnlineProvider } from './context/DaftarOnlineContext'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HARDIN ONLINE',
-  description: 'HARDIN ONLINE',
+  title: 'AZIZ ONLINE',
+  description: 'AZIZ ONLINE',
 }
 
 export default function RootLayout({
   children,
-}: {  
+}: {
   children: React.ReactNode
 }) {
   return (

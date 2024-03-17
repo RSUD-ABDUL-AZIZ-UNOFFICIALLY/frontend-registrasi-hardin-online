@@ -137,7 +137,9 @@ const FormRegister = () => {
         <React.Fragment>
             <div className="grid gap-3 w-full text-sm">
                 {success == true && <ModalSuccess />}
-
+                <div className="font-bold uppercase text-secondary text-lg">
+                    Form Registrasi
+                </div>
                 <div className="form-input">
                     <label htmlFor="">Nama Lengkap</label>
                     <input value={name} onChange={(e) => setName(e.target.value)} className='shadow-lg input' type="text" placeholder='Masukan nama lengkap' />
