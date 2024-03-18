@@ -15,7 +15,7 @@ const SectionNone = () => {
     return (
         <React.Fragment>
             <div className="grid lg:md:grid-cols-2 gap-3 animasi-popup">
-                <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${alert == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
+                {/* <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${alert == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
                     <div className="flex items-center justify-between gap-1 p-3">
                         <div className="flex items-center gap-1">
                             Hi
@@ -30,7 +30,7 @@ const SectionNone = () => {
                             alt="welcome image"
                         />
                     </div>
-                </div>
+                </div> */}
                 <div className='rounded-lg shadow-lg p-3 animasi-popup bg-white'>
                     <div className="gap-3 flex justify-center">
                         <img className='w-[30%]' src="/alert.png" alt="" />
@@ -42,12 +42,20 @@ const SectionNone = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card shadow-lg bg-[#ffffff] animasi-popup">
+                <div className="rounded-lg shadow-lg p-3 animate-popup bg-secondary text-white">
+                    <div className="text-lg uppercase text-warning font-bold">Berkas WajiB Bawa</div>
+                    <div className="">
+                        <li>Kartu Keluarga (KK)</li>
+                        <li>Kartu Tanda Penduduk (KTP)</li>
+                        <li>BPJS    <span className='text-warning'>Opsional</span></li>
+                    </div>
+                </div>
+                {/* <div className="card shadow-lg bg-[#ffffff] animasi-popup">
                     <Image
                         src={wajib}
                         alt="berkas wajib bawa image"
                     />
-                </div>
+                </div> */}
             </div>
         </React.Fragment >
     )

@@ -21,10 +21,13 @@ const Body = () => {
                     }
                 });
                 if (response.data.error == false) {
+                    console.log('family', response.data);
+
                     setDataFamily(response.data.data)
                 }
             } catch (error) {
                 setDataFamily(null)
+                console.log('error', error);
 
             }
         }

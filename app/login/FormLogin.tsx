@@ -84,7 +84,7 @@ const FormLogin = () => {
     }
 
     const handleLogin = async () => {
-        return router.push('/dashboard')
+        // return router.push('/dashboard')
 
         if (phone && otp) {
             try {
@@ -102,10 +102,11 @@ const FormLogin = () => {
                     setDescError('')
                     setErrorOtp(false)
                     setDescErrorOtp('')
-                    // setDescSuccess('Login Berhasil')
+                    setDescSuccess('Login Berhasil')
                     // auth.setAlertWelcome(true)
-                    // sessionStorage.setItem('authToken', response.data.data.token)
-                    router.push('/')
+
+                    sessionStorage.setItem('authToken', response.data.data.token)
+                    router.push('/dashboard')
                     sessionStorage.removeItem('loadingOtp')
                     sessionStorage.removeItem('loadingOtpRegis')
                 }
@@ -142,16 +143,16 @@ const FormLogin = () => {
         const timess: string | any = sessionStorage.getItem('loadingOtp')
         if (timess) {
             const loadingTime = parseInt(timess)
-            // setSeconds(loadingTime)
+            setSeconds(loadingTime)
             setSeconds(0)
-            // setTimeFormat(moment.duration(loadingTime, 'seconds'))
+            setTimeFormat(moment.duration(loadingTime, 'seconds'))
             const countdown = setInterval(() => {
                 if (seconds > 0) {
-                    // sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
-                    // sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
-                    // setSeconds(seconds - 1)
+                    sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
+                    sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
+                    setSeconds(seconds - 1)
                     setSeconds(0)
-                    // setTimeFormat(moment.duration(seconds - 1, 'seconds'))
+                    setTimeFormat(moment.duration(seconds - 1, 'seconds'))
                 } else {
                     setLoading(false)
                     setSeconds(waktu_loading_otp)

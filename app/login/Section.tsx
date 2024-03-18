@@ -13,6 +13,7 @@ const Section = () => {
         if (auth.login == true) {
             router.push('/dashboard')
         }
+        auth.checkAuth()
     }, [auth.login])
     return (
         <React.Fragment>

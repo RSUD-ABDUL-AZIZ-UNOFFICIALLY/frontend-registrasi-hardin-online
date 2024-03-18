@@ -14,6 +14,9 @@ const ModalPoli = () => {
     const handleModal = (e: any) => {
         setModal(false)
         context.handlePoli(e)
+        console.log('e', e);
+
+        context.getDokter(e.kd_poli, context.dateBooking)
     }
     return (
         <div className=" mb-3">
@@ -43,7 +46,7 @@ const ModalPoli = () => {
                             </div>
                         </div>
                         <div className="p-2 text-center uppercase">{ }</div>
-                        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2 max-h-[60vh] overflow-y-scroll pb-4 p-2">
+                        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-2 max-h-[80vh] overflow-y-scroll pb-4 p-2 scroll-m-1">
                             {context.dataPoli && context.dataPoli.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>

@@ -138,15 +138,15 @@ const Section = () => {
                         }
                     </div>
                 </div>
-                <div className={`section shadow-lg animasi-popup`}>
+                <div className={`mt-3 animasi-popup`}>
                     {data ? data.map((item: any, index: number) => {
                         return (
                             <React.Fragment key={index}>
                                 <div className="rounded-lg shadow-xl animasi-popup p-0 flex overflow-hidden mb-3">
-                                    <div className={`w-[30%] p-2  ${item.status == 'Terdaftar' && `bg-success`} ${item.status == 'Batal' && `bg-red-500`} ${item.status == 'Belum' && `bg-info`} text-center text-white grid items-center`}>
+                                    <div className={`w-[30%] p-2  ${item.status == 'Terdaftar' && `bg-primary`} ${item.status == 'Batal' && `bg-red-500`} ${item.status == 'Belum' && `bg-secondary`} text-center text-white grid items-center`}>
                                         <div className="">
                                             <p className='uppercase text-sm'>Antrian</p>
-                                            <p className='text-5xl font-bold'>{item.no_reg}</p>
+                                            <p className='text-5xl'>{item.no_reg}</p>
                                         </div>
                                     </div>
                                     <div className="w-[70%] p-2 grid gap-1">
@@ -224,10 +224,10 @@ const Section = () => {
                                                                 </React.Fragment>
                                                                 :
                                                                 < React.Fragment >
-                                                                    <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="button-success text-[10px] w-fit text-white">
+                                                                    <button onClick={() => handleCheckin(item.no_rkm_medis, item.tanggal_periksa)} className="button-primary text-[10px] w-fit text-white">
                                                                         Check In
                                                                     </button>
-                                                                    <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="button-secondary text-[10px] w-fit text-white">
+                                                                    <button onClick={() => handleBatal(item.no_rkm_medis, item.tanggal_periksa)} className="button-warning text-[10px] w-fit text-white">
                                                                         Batal
                                                                     </button>
                                                                 </React.Fragment>

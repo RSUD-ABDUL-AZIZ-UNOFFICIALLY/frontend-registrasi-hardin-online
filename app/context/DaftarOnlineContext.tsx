@@ -64,11 +64,11 @@ export const DaftarOnlineProvider = ({ children }: { children: any }) => {
             }
         }
     }
-    const getDokter = async () => {
+    const getDokter = async (e: string, i: string) => {
         const token = sessionStorage.getItem('authToken')
         if (token) {
             try {
-                const response: any = await axios.get(`${base_url}/hardin/reg/jadwal?kd_poli=${poli.kd_poli}&tanggal_periksa=${dateBooking}`, {
+                const response: any = await axios.get(`${base_url}/hardin/reg/jadwal?kd_poli=${e}&tanggal_periksa=${i}`, {
                     headers: {
                         'Authorization': 'Bearer ' + token
                     }
@@ -138,9 +138,8 @@ export const DaftarOnlineProvider = ({ children }: { children: any }) => {
 
     useEffect(() => {
         getFamily()
-        getDokter()
         getAsuransi()
-    }, [poli, dateBooking, nik, dokter, familySelect])
+    }, [])
 
     return (
         <DaftarOnlineContext.Provider

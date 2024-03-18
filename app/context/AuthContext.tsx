@@ -46,6 +46,36 @@ export const AuthProvider = ({ children }: { children: any }) => {
         }
     }
 
+    const getDataProfile = async () => {
+        const getToken = sessionStorage.getItem('authToken')
+        if (getToken) {
+            try {
+                const response: any = await axios.get(`${base_url}/hardin/profile`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + getToken
+                    }
+                });
+                if (response.data.error == false) {
+                    setLogin(true)
+                    setToken(getToken)
+                    setDataProfile(response.data.data)
+                }
+
+            } catch (error) {
+                const response: any = error
+                if (response && response.response && response.response.data && response.response.data.status == false) {
+                    setLogin(false)
+                    setToken(null)
+                }
+
+            }
+        } else {
+            setLogin(false)
+            setToken(null)
+            router.push('/login')
+        }
+    }
+
     const logout = () => {
         sessionStorage.removeItem('authToken')
         sessionStorage.removeItem('loadingOtp')
@@ -57,9 +87,10 @@ export const AuthProvider = ({ children }: { children: any }) => {
     }
     useEffect(() => {
         // checkAuth()
-    }, [login, token, checkAuth])
+        getDataProfile()
+    }, [])
     return (
-        <AuthContext.Provider value={{ dataSelect, setDataSelect, token, login, logout, dataProfile, alertWelcome, setAlertWelcome, checkAuth }}>
+        <AuthContext.Provider value={{ dataSelect, setDataSelect, token, login, logout, dataProfile, alertWelcome, setAlertWelcome, checkAuth, getDataProfile }}>
             {children}
         </AuthContext.Provider>
     )

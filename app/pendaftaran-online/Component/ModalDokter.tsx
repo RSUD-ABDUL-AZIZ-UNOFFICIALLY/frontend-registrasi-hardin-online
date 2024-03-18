@@ -9,7 +9,6 @@ const ModalDokter = () => {
 
     const handleOpenModal = () => {
         setModal(true)
-        // context.getDokter()
     }
 
     const handleModal = (e: any) => {
@@ -49,7 +48,7 @@ const ModalDokter = () => {
                             </div>
                         </div>
                         <div className="p-2 text-center uppercase">{ }</div>
-                        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-2 max-h-[60vh] overflow-y-scroll pb-4">
+                        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-2 max-h-[80vh] overflow-y-scroll pb-4">
                             {context.dataDokter && context.dataDokter.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>

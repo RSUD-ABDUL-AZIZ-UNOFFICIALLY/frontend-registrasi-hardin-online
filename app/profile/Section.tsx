@@ -18,28 +18,27 @@ const Section = () => {
                 <div className="grid grid-cols-5">
                     <div className="col-span-1 text-left">Nama</div>
                     <div className="col-span-1 text-center">:</div>
-                    <div className="col-span-3 text-right uppercase font-semibold">{data && data.fullname}</div>
+                    <div className="col-span-3 ">{data && data.fullname}</div>
                 </div>
                 <div className="grid grid-cols-5">
                     <div className="col-span-1 text-left">NIK</div>
                     <div className="col-span-1 text-center">:</div>
-                    <div className="col-span-3 text-right uppercase font-semibold">{data && data.nik}</div>
+                    <div className="col-span-3 ">{data && data.nik}</div>
                 </div>
                 <div className="grid grid-cols-5">
                     <div className="col-span-1 text-left">WA</div>
                     <div className="col-span-1 text-center">:</div>
-                    <div className="col-span-3 text-right uppercase font-semibold">{data && data.wa}</div>
+                    <div className="col-span-3 ">{data && data.wa}</div>
                 </div>
             </div>
             <div className="section shadow-md animasi-popup">
-                <h1 className='uppercase font-semibold'>Anggota Keluarga : </h1>
-                <ul className='p-3'>
-                    {family && family.map((item: any, index: number) => {
-                        return (
-                            <li key={index} className=''>{`${index + 1}. ${item.nama}`}</li>
-                        )
-                    })}
-                </ul>
+                <h1 className='uppercase font-semibold text-secondary'>Anggota Keluarga : </h1>
+
+                {family && family.map((item: any, index: number) => {
+                    return (
+                        <li key={index} className=''>{`${item.nama}`}</li>
+                    )
+                })}
             </div>
         </React.Fragment>
     )
