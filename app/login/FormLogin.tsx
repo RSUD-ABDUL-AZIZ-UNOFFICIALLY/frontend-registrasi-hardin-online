@@ -106,7 +106,7 @@ const FormLogin = () => {
                     // auth.setAlertWelcome(true)
 
                     sessionStorage.setItem('authToken', response.data.data.token)
-                    router.push('/dashboard')
+                    // router.push('/dashboard')
                     sessionStorage.removeItem('loadingOtp')
                     sessionStorage.removeItem('loadingOtpRegis')
                 }
@@ -225,7 +225,7 @@ const FormLogin = () => {
                     </React.Fragment>
                 }
                 {!phone && !otp ?
-                    <div className="text-error mt-3">*Nomor Whatapp dan Kode Otp Harus Di isi</div>
+                    <div className="text-error mt-3">*Nomor Whatapps dan Kode OTP Harus Di isi</div>
                     : !phone ? <div className="text-error mt-3">*Nomor Whatapp Harus Di isi</div>
                         : !otp ? <div className="text-error mt-3">*Kode OTP Harus Di isi</div> : null
                 }

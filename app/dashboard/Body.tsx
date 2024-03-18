@@ -10,7 +10,7 @@ const Body = () => {
     const daftarOnline: any = useContext(DaftarOnlineContext)
     const base_url = process.env.base_url
     const auth: any = useContext(AuthContext)
-    const [dataFamily, setDataFamily] = useState<any | null>()
+    const [dataFamily, setDataFamily] = useState<any | null>(null)
     const getDataFamily = async () => {
         const token = sessionStorage.getItem('authToken')
         if (token) {
@@ -21,14 +21,12 @@ const Body = () => {
                     }
                 });
                 if (response.data.error == false) {
-                    console.log('family', response.data);
-
-                    setDataFamily(response.data.data)
+                    setDataFamily('ada')
+                } else {
+                    setDataFamily('none')
                 }
             } catch (error) {
-                setDataFamily(null)
-                console.log('error', error);
-
+                setDataFamily('none')
             }
         }
     }
@@ -39,16 +37,17 @@ const Body = () => {
     return (
         <React.Fragment>
             {/* <Section  */}
-            {dataFamily ?
+            {dataFamily == 'ada' ?
                 <>
                     <Section />
                 </>
-                :
-                <>
-                    <SectionNone />
-                </>
+                : dataFamily == 'none' ?
+                    <>
+                        <SectionNone />
+                    </>
+                    : null
             }
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 

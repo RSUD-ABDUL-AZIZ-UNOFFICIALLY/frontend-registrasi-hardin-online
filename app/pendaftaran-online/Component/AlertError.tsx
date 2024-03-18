@@ -4,6 +4,8 @@ import { DaftarOnlineContext } from '@/app/context/DaftarOnlineContext';
 import { useRouter } from 'next/navigation';
 import errorGif from '../../../public/error.gif'
 import Image from 'next/image';
+import moment from 'moment';
+import 'moment/locale/id'; // Import Indonesian locale
 
 const AlertError = () => {
     const [loading, setLoading] = useState<boolean>(false)
@@ -44,14 +46,14 @@ const AlertError = () => {
                                     />
                                 </div>
                                 <div className="text-center uppercase font-bold mt-2">Gagal !</div>
-                                <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Pendaftar Sudah Pernah Melakukan Pendaftaran Pada Hari Ini,  Cek Check In</div>
+                                <div className="text-center p-3 text-black text-sm rounded-lg shadow-lg mb-3">Pendaftar Sudah Pernah Melakukan Pendaftaran Pada <span>{moment(context.dateBooking).format('DD MMMM YYYY')}</span>,  Cek Check In</div>
                                 <div className="grid grid-cols-2 gap-2">
                                     <button onClick={() => handleNavigation('/dashboard')} className="button-warning mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Kembali Ke Dashboard
                                         </div>
                                     </button>
-                                    <button onClick={() => handleNavigation(`/check-in`)} className="button-info mt-3 shadow-xl">
+                                    <button onClick={() => handleNavigation(`/check-in`)} className="button-secondary mt-3 shadow-xl">
                                         <div className="text-sm">
                                             Lihat Check In
                                         </div>

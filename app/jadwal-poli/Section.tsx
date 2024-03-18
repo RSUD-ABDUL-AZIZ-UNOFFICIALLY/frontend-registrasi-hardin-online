@@ -44,7 +44,7 @@ const Section = () => {
     const auth: any = useContext(AuthContext)
     const daftarOnline: any = useContext(DaftarOnlineContext)
     const api_url = process.env.api_url
-    const [idPoli, setIdPoli] = useState<string>('ANA')
+    const [idPoli, setIdPoli] = useState<string>('')
     const [dataAntrian, setDataAntrian] = useState<typeAntrianPoli | null>()
     const [antrianSekarang, setAntrianSekarang] = useState<string>('-')
     const [dataPoli, setDataPoli] = useState<typePoli[]>([])
@@ -84,13 +84,11 @@ const Section = () => {
             </div> */}
 
             <select onChange={(e) => setIdPoli(e.target.value)} disabled={dataPoli ? false : true} value={idPoli} className="select select-bordered select-lg w-full animasi-popup bg-white">
-                <option className='bg-white' hidden>Pilih Poli</option>
+                <option value={'ANA'} className='bg-white' hidden>Pilih Poli</option>
                 {dataPoli && dataPoli.map((item: typePoli, index: number) => {
                     return (
-                        <option className='bg-white' selected={idPoli == item.kd_poli ? true : false} value={item.kd_poli} key={index}>
-                            <div className="p-3">
-                                {item.nm_poli}
-                            </div>
+                        <option className='bg-white p-3' value={item.kd_poli} key={index}>
+                            {item.nm_poli}
                         </option>
                     )
                 })}

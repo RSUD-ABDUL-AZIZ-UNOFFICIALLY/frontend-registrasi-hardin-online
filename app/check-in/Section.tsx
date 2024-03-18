@@ -12,6 +12,7 @@ const Section = () => {
     const base_url = process.env.base_url
     const [data, setData] = useState<any>()
     const today = moment().format('YYYY-MM-DD')
+
     const getDaftarBooking = async () => {
         const token = sessionStorage.getItem('authToken')
 
@@ -29,6 +30,7 @@ const Section = () => {
                 }
             } catch (error) {
                 const response: any = error
+                setData(null)
             }
         }
 
@@ -90,10 +92,11 @@ const Section = () => {
 
     const handleSelectDropDown = (e: any) => {
         context.setFamilySelect(e)
+        context.handleNoRm(e.noRm)
         context.handleName(e.nama)
         context.handleNik(e.nik)
-        context.handleNoRm(e.noRm)
         setDropdown(false)
+
     }
 
     useEffect(() => {
@@ -126,7 +129,7 @@ const Section = () => {
                             <div className="grid gap-2 shadow-md p-4 mt-3 section">
                                 {context && context.dataFamily.map((item: any, index: number) => {
                                     return (
-                                        <button key={index} onClick={() => handleSelectDropDown(item)} className={`${context.familySelect && context.familySelect.nik === item.nik ? `button-secondary` : `button-white`} shadow-md text-xs font-normal`}>
+                                        <button key={index} onClick={() => handleSelectDropDown(item)} className={`${context.familySelect && context.familySelect.nik === item.nik ? `button-primary` : `button-white`} shadow-md text-xs font-normal`}>
                                             <div className="animasi-popup">
                                                 <p>{`${item.nama} - (${item.noRm})`}</p>
                                                 <small className='font-xs'>{`${item.nik}`}</small>
@@ -203,7 +206,7 @@ const Section = () => {
                                                             <React.Fragment>
                                                                 <div className="section shadow text-xs text-center flex items-center justify-between">
                                                                     Anda Sudah Check In
-                                                                    <div className="text-green-500">
+                                                                    <div className="text-primary">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                                                             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                                                         </svg>
@@ -248,7 +251,7 @@ const Section = () => {
                     })
                         :
                         <React.Fragment>
-                            <div className="section text-center animasi-popup">Tidak Ada Pendaftaran</div>
+                            <div className="section text-center">Tidak Ada Pendaftaran</div>
                         </React.Fragment>
                     }
                 </div>

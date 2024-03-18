@@ -43,7 +43,7 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                 </div>
                                 <div className="text-center p-3 text-lime-700 text-sm rounded-lg shadow-lg mb-3">Berhasil Melakukan Registrasi</div>
                                 <div className="rounded-lg shadow-xl  p-0 flex overflow-hidden">
-                                    <div className="w-[30%] p-2 bg-info text-center text-white flex items-center justify-center">
+                                    <div className="w-[30%] p-2 bg-secondary text-center text-white flex items-center justify-center">
                                         <div className="">
                                             <p className='uppercase text-sm'>Antrian</p>
                                             <p className='text-5xl font-bold'>{data && data.no_reg}</p>
