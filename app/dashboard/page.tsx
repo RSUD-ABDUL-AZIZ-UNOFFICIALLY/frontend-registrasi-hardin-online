@@ -5,9 +5,11 @@ import Body from './Body'
 export default function Home() {
 
     return (
-        <main className="main-section">
-            <Navbar />
-            <Body />
+        <main className="main-section flex justify-center">
+            <div className="lg:md:w-[50vw] w-[95vw]  grid gap-2">
+                <Navbar />
+                <Body />
+            </div>
         </main>
     )
 }

@@ -77,17 +77,17 @@ const Section = () => {
     }, [idPoli])
     return (
         <React.Fragment>
-            <div className="section">
+            {/* <div className="section">
                 <div className="text-center">
                     Jadwal Poli
                 </div>
-            </div>
+            </div> */}
 
-            <select onChange={(e) => setIdPoli(e.target.value)} disabled={dataPoli ? false : true} value={idPoli} className="select select-bordered select-lg w-full animasi-popup">
-                <option hidden>Pilih Poli</option>
+            <select onChange={(e) => setIdPoli(e.target.value)} disabled={dataPoli ? false : true} value={idPoli} className="select select-bordered select-lg w-full animasi-popup bg-white">
+                <option className='bg-white' hidden>Pilih Poli</option>
                 {dataPoli && dataPoli.map((item: typePoli, index: number) => {
                     return (
-                        <option selected={idPoli == item.kd_poli ? true : false} value={item.kd_poli} key={index}>
+                        <option className='bg-white' selected={idPoli == item.kd_poli ? true : false} value={item.kd_poli} key={index}>
                             <div className="p-3">
                                 {item.nm_poli}
                             </div>
@@ -113,7 +113,7 @@ const Section = () => {
                                 {dataAntrian && dataAntrian.status_antrian ?
                                     dataAntrian.status_antrian.sudah
                                     :
-                                    <span className="loading loading-spinner loading-md"></span>
+                                    <span className="loading loading-spinner loading-md text-secondary"></span>
                                 }
                             </div>
                         </div>
@@ -127,7 +127,7 @@ const Section = () => {
                                 {dataAntrian && dataAntrian.status_antrian ?
                                     dataAntrian.status_antrian.belum
                                     :
-                                    <span className="loading loading-spinner loading-md"></span>
+                                    <span className="loading loading-spinner loading-md text-secondary"></span>
                                 }
                             </div>
                         </div>
@@ -141,7 +141,7 @@ const Section = () => {
                                 {dataAntrian && dataAntrian.status_antrian ?
                                     dataAntrian.status_antrian.batal
                                     :
-                                    <span className="loading loading-spinner loading-md"></span>
+                                    <span className="loading loading-spinner loading-md text-secondary"></span>
                                 }
                             </div>
                         </div>
@@ -155,7 +155,7 @@ const Section = () => {
                                 {dataAntrian && dataAntrian.status_antrian ?
                                     dataAntrian.status_antrian.total
                                     :
-                                    <span className="loading loading-spinner loading-md"></span>
+                                    <span className="loading loading-spinner loading-md text-secondary"></span>
                                 }
                             </div>
                         </div>
@@ -164,36 +164,36 @@ const Section = () => {
                         </span>
                     </div>
                 </div>
+                {dataAntrian && dataAntrian.data && dataAntrian.data.length > 0 ?
+                    <div className="mt-3">
+                        <div className="text-center p-2 bg-white  mb-4 rounded-sm uppercase font-semibold">
+                            List Nomor Antrian
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 p-2">
+                            {dataAntrian.data.map((item: typeDataAntrian, index: number) => {
+                                return (
+                                    <React.Fragment key={index}>
+                                        <div className={`animasi-popup duration-[400ms] p-2 text-center border rounded-md ${item.status == 'Sudah' ? 'bg-green-400 border-green-400 text-white' : item.status == 'Belum' ? 'bg-yellow-300 border-yellow-300 ' : item.status == 'Batal' ? 'bg-red-500 border-red-500 text-white' : 'bg-white'}`}>
+                                            <div className="text-2xl font-bold">
+                                                {item.no_reg}
+                                            </div>
+                                            <div className="text-xs">
+                                                {item.status}
+                                            </div>
+                                        </div>
+                                    </React.Fragment>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    :
+                    <div className="mt-4">
+                        <div className="text-center text-white p-2 bg-primary rounded-md uppercase font-semibold">
+                            Tidak Ada Antrian
+                        </div>
+                    </div>
+                }
             </div>
-            {dataAntrian && dataAntrian.data && dataAntrian.data.length > 0 ?
-                <div className="section">
-                    <div className="text-center p-2 bg-white  mb-4 rounded-sm uppercase font-semibold">
-                        List Nomor Antrian
-                    </div>
-                    <div className="grid grid-cols-2 gap-3 p-2">
-                        {dataAntrian.data.map((item: typeDataAntrian, index: number) => {
-                            return (
-                                <React.Fragment key={index}>
-                                    <div className={`animasi-popup duration-[400ms] p-2 text-center border rounded-md ${item.status == 'Sudah' ? 'bg-green-400 border-green-400 text-white' : item.status == 'Belum' ? 'bg-yellow-300 border-yellow-300 ' : item.status == 'Batal' ? 'bg-red-500 border-red-500 text-white' : 'bg-white'}`}>
-                                        <div className="text-2xl font-bold">
-                                            {item.no_reg}
-                                        </div>
-                                        <div className="text-xs">
-                                            {item.status}
-                                        </div>
-                                    </div>
-                                </React.Fragment>
-                            )
-                        })}
-                    </div>
-                </div>
-                :
-                <div className="section">
-                    <div className="text-center p-2 bg-warning rounded-sm uppercase font-semibold">
-                        Tidak Ada Antrian
-                    </div>
-                </div>
-            }
         </React.Fragment>
     )
 }

@@ -37,8 +37,8 @@ body {
   color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   min-width: 100vw;
+  background: url("/bg/bg-login2.jpg");
   font-family: Verdana;
-  background: url("/bg/bg6.avif");
   background-size: cover;
 }
 
@@ -89,7 +89,7 @@ body {
 }
 
 .main-section {
-  padding: 15px;
+  padding-top: 15px;
   display: grid;
   gap: 20px;
 }

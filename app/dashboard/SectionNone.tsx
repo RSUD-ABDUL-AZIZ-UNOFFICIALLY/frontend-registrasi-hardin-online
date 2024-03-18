@@ -10,7 +10,7 @@ const SectionNone = () => {
     const [alert, setAlert] = useState<boolean>(true)
     const auth: any = useContext(AuthContext)
     useEffect(() => {
-        auth.checkAuth()
+        // auth.checkAuth()
     }, [auth])
     return (
         <React.Fragment>
@@ -31,7 +31,7 @@ const SectionNone = () => {
                         />
                     </div>
                 </div>
-                <div className='rounded-lg shadow-lg p-3 animasi-popup'>
+                <div className='rounded-lg shadow-lg p-3 animasi-popup bg-white'>
                     <div className="gap-3 flex justify-center">
                         <img className='w-[30%]' src="/alert.png" alt="" />
                     </div>
@@ -47,16 +47,6 @@ const SectionNone = () => {
                         src={wajib}
                         alt="berkas wajib bawa image"
                     />
-                    {/* <div className="gap-3 p-3 flex justify-center">
-                    <img className='w-[30%]' src="/doc2.png" alt="" />
-                </div> */}
-                    {/* <div className="p-2">
-                        <ul className='grid gap-1 justify-center items-center text-center text-lg font-bold'>
-                            <li>KTP</li>
-                            <li>Kartu Keluarga</li>
-                            <li>BPJS (Optional)</li>
-                        </ul>
-                    </div> */}
                 </div>
             </div>
         </React.Fragment >

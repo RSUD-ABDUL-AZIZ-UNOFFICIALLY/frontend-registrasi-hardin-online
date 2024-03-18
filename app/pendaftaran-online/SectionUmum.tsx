@@ -37,7 +37,7 @@ const SectionUmum = () => {
     }
     return (
         <React.Fragment>
-            <div className="section section-info text-white text-center mb-4">
+            <div className="section text-secondary text-left font-bold text-lg mb-4">
                 Form Registrasi Online
             </div>
             <div className="items-center gap-2 mb-3 w-full">

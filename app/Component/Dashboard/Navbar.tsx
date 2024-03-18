@@ -12,11 +12,11 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        auth.checkAuth()
+        // auth.checkAuth()
     }, [])
     return (
-        <div className='navbar shadow-md'>
-            <div className="aspect-square  h-full p-1 rounded-[7px]">
+        <div className='navbar shadow-md w-full'>
+            <div className="aspect-square h-full p-1 rounded-[7px]">
                 {/* <img className='' src="/skw.png" alt="" /> */}
                 <Image
                     src={skwPng}
