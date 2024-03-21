@@ -14,7 +14,7 @@ const SectionNone = () => {
     }, [auth])
     return (
         <React.Fragment>
-            <div className="grid lg:md:grid-cols-2 gap-3 animasi-popup">
+            <div className="grid lg:md:grid-cols-1 gap-3 animasi-popup">
                 {/* <div className={`rounded-lg shadow-lg bg-white ease-in-out duration-300 overflow-hidden ${alert == true ? `scale-1` : `scale-0  duration-300 hidden`}`}>
                     <div className="flex items-center justify-between gap-1 p-3">
                         <div className="flex items-center gap-1">
@@ -36,9 +36,9 @@ const SectionNone = () => {
                         <img className='w-[30%]' src="/alert.png" alt="" />
                     </div>
                     <div className="text-center">
-                        <div className="text-xl">Daftar Keluarga Belum Tersedia</div>
+                        <div className="text-xl">Akun anda belum terverifikasi</div>
                         <div className="text-lg font-bold">
-                            Segera tambahkan daftar <br /> keluarga pada LOKET 4
+                            Segera verifikasi registrasi akun <br /> pada LOKET pendaftaran
                         </div>
                     </div>
                 </div>

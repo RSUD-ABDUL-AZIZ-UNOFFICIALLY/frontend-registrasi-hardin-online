@@ -5,7 +5,9 @@ import SectionNone from './SectionNone'
 import axios from 'axios'
 import { DaftarOnlineContext } from '../context/DaftarOnlineContext'
 import { AuthContext } from '../context/AuthContext'
-
+import Image from 'next/image'
+import d1 from "../../public/d1.png";
+import d2 from "../../public/d2.png";
 const Body = () => {
     const daftarOnline: any = useContext(DaftarOnlineContext)
     const base_url = process.env.base_url
@@ -47,6 +49,20 @@ const Body = () => {
                     </>
                     : null
             }
+            <div className="absolute bottom-0 right-28 shadow-black drop-shadow-lg lg:md:block hidden">
+                <Image
+                    alt=''
+                    src={d1}
+                    className='h-[70vh] w-fit'
+                />
+            </div>
+            <div className="absolute bottom-0 left-28 shadow-black drop-shadow-lg lg:md:block hidden">
+                <Image
+                    alt=''
+                    src={d2}
+                    className='h-[70vh] w-fit'
+                />
+            </div>
         </React.Fragment >
     )
 }

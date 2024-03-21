@@ -40,6 +40,7 @@ body {
   background: url("/bg/bg-login2.jpg");
   font-family: Verdana;
   background-size: cover;
+  background-position: center;
 }
 
 .bg-white {

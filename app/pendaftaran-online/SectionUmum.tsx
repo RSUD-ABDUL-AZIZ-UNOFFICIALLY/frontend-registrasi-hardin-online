@@ -13,7 +13,7 @@ const SectionUmum = () => {
 
     const [valueDate, setValueDate] = useState<string>(moment().format('YYYY-MM-DD'))
     const minToday = moment().format('YYYY-MM-DD')
-    const maxToday = moment().add(4, 'days').format('YYYY-MM-DD')
+    const maxToday = moment().add(1, 'days').format('YYYY-MM-DD')
     const [dropdown, setDropdown] = useState<boolean>(false)
     const hanldleDropdown = () => {
         if (dropdown == true) {
@@ -37,8 +37,11 @@ const SectionUmum = () => {
     }
     return (
         <React.Fragment>
-            <div className="section text-secondary text-left font-bold text-lg mb-4">
+            <div className="text-secondary text-left font-bold text-lg mb-3">
                 Form Registrasi Online
+                <div className="bg-secondary p-2 rounded-lg w-fit">
+                    <div className="text-white text-sm font-semibold">Waktu Pelayanan Poliklinik : <span className='text-warning'>07.30 - 11.30</span></div>
+                </div>
             </div>
             <div className="items-center gap-2 mb-3 w-full">
                 <div className=" p-2">Pilih Pendaftar</div>
@@ -81,14 +84,14 @@ const SectionUmum = () => {
             </div>
             {context.nik && <ModalPoli />}
             {context.poli && <ModalDokter />}
-            {context.poli && context.dokter &&
+            {/* {context.poli && context.dokter &&
                 <div className="items-center gap-2 mb-3">
                     <div className=" p-2">Waktu</div>
                     <div className="">
                         <div className="section-warning shadow-md text-center">{`${context.dokter.jam_mulai} - ${context.dokter.jam_selesai}`}</div>
                     </div>
                 </div>
-            }
+            } */}
             {context.poli && context.dokter && <ModalAsuransi />}
             <div className="mt-5 mb-5">
                 {!context.nik && <small className='p-3 w-fit rounded-lg text-red-600'>*Pendaftar Wajib Di Pilih</small>}

@@ -46,12 +46,12 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                     <div className="w-[30%] p-2 bg-secondary text-center text-white flex items-center justify-center">
                                         <div className="">
                                             <p className='uppercase text-sm'>Antrian</p>
-                                            <p className='text-5xl font-bold'>{data && data.no_reg}</p>
+                                            <p className='text-5xl'>{data && data.no_reg}</p>
                                         </div>
                                     </div>
                                     <div className="w-[70%] p-2 grid gap-2">
                                         <div className="flex item-center gap-1">
-                                            <div className="w-[30%] text-xs">No RM</div>
+                                            <div className="w-[30%] text-xs font-bold">No RM</div>
                                             <div className="w-[70%] text-xs">{data && data.no_rkm_medis}</div>
                                         </div>
                                         <div className="flex item-center gap-2">
@@ -77,6 +77,10 @@ const AlertSuccess = ({ data }: { data: any }) => {
                                         <div className="flex item-center gap-2">
                                             <div className="w-[30%] text-xs">Tanggal</div>
                                             <div className="w-[70%] text-xs">{data && moment(data.tanggal_periksa).format('DD MMMM YYYY')}</div>
+                                        </div>
+                                        <div className="flex item-center gap-2">
+                                            <div className="w-[30%] text-xs">Waktu</div>
+                                            <div className="w-[70%] text-xs">07.30 - 11.30</div>
                                         </div>
                                         {/* <div className="flex justify-center">
                                             <div className="w-40 p-3">

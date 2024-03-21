@@ -52,11 +52,11 @@ const ModalDokter = () => {
                             {context.dataDokter && context.dataDokter.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <button onClick={() => handleModal(item)} className={`${context.dokter && context.dokter.kd_dokter == item.kd_dokter ? `button-primary` : `button-white`} shadow border font-normal`}>
+                                        <button onClick={() => handleModal(item)} className={`${context.dokter && context.dokter.kd_dokter == item.kd_dokter ? `button-primary` : `button-white`} shadow border font-normal text-sm`}>
                                             {item.dokter.nm_dokter}
-                                            <div className="flex text-center justify-center font-light">
+                                            {/* <div className="flex text-center justify-center font-light">
                                                 <small>{`${item.jam_mulai} - ${item.jam_selesai}`}</small>
-                                            </div>
+                                            </div> */}
                                         </button>
                                     </React.Fragment>
                                 )

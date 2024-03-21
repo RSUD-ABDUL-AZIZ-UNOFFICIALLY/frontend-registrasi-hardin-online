@@ -16,7 +16,7 @@ const HeaderLogin = () => {
             </div>
             <div className="grid justify-center text-center mt-2">
                 <div className="uppercase font-bold text-[25px] bg-secondary p-1">Selamat Datang Di</div>
-                <div className="font-bold uppercase text-[30px] bg-warning p-1 text-black">Dr. Aziz Online</div>
+                <div className="font-bold uppercase text-[30px] bg-warning p-1 text-black">Aziz Online</div>
             </div>
         </div>
     )

@@ -1,0 +1,6 @@
+- Aktivasi dak hanya di Loket 4, bisa di semua loket dan via whatapps (done)
+- pendafatran cuma 2 hari (done)
+- nama poliklinik di hilangkan
+- pasian lama dan pasien baru di registrasi awal -----
+- jam dokter diganti jadi jam pendafatran pelayanan poli - (Done)
+- keterangan pada chekck in pada pasien umum - (silakan langsung ke poli) - (done)

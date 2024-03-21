@@ -14,7 +14,6 @@ const ModalPoli = () => {
     const handleModal = (e: any) => {
         setModal(false)
         context.handlePoli(e)
-        console.log('e', e);
 
         context.getDokter(e.kd_poli, context.dateBooking)
     }
@@ -50,7 +49,7 @@ const ModalPoli = () => {
                             {context.dataPoli && context.dataPoli.map((item: any, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `button-primary` : `button-white`} shadow font-normal`}>
+                                        <button onClick={() => handleModal(item)} className={`${context.poli && context.poli.kd_poli == item.kd_poli ? `button-primary` : `button-white`} shadow font-normal text-sm`}>
                                             {item.nm_poli}
                                         </button>
                                     </React.Fragment>

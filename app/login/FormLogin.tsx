@@ -144,14 +144,11 @@ const FormLogin = () => {
         if (timess) {
             const loadingTime = parseInt(timess)
             setSeconds(loadingTime)
-            setSeconds(0)
             setTimeFormat(moment.duration(loadingTime, 'seconds'))
             const countdown = setInterval(() => {
                 if (seconds > 0) {
                     sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
-                    sessionStorage.setItem('loadingOtp', `${seconds - 1}`)
                     setSeconds(seconds - 1)
-                    setSeconds(0)
                     setTimeFormat(moment.duration(seconds - 1, 'seconds'))
                 } else {
                     setLoading(false)
